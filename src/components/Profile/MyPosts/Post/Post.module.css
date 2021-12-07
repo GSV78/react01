@@ -1,0 +1,24 @@
+.post{
+    min-height: 50px;
+}
+.post img{
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+    border-radius: 50%;
+}
+
+.postAvaAndText{
+    display: flex;
+}
+
+.post p,
+.post span{
+    color: #627BB0;
+    width: 100%;
+}
+
+.post span{
+display: inline-block;
+margin-bottom: 20px;
+}
