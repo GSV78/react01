@@ -1,0 +1,14 @@
+.post{
+    min-height: 50px;
+    display: flex;
+}
+.post img{
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+    border-radius: 50%;
+}
+.post p{
+    color: #627BB0;
+    width: 100%;
+}
