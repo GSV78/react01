@@ -1,17 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap');
+
 .app-wrapper{
   margin: 0 auto;
   display: grid;
-  grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
   grid-template-areas: 
-  "h h"
   "n c";
   width: 100%;
   min-height: 100vh;
-  background-color: #E7D376;
+  background-color: #F7F8FC;
+  box-sizing: border-box;
 }
 
 .app-wrapper-content{
   grid-area: c;
-  background-color: #E7D376;
+  background-color: #F7F8FC;
 }
+
