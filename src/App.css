@@ -7,5 +7,11 @@
   "h h"
   "n c";
   width: 100%;
-  background-color: #E7D376	;
+  min-height: 100vh;
+  background-color: #E7D376;
+}
+
+.app-wrapper-content{
+  grid-area: c;
+  background-color: #E7D376;
 }
