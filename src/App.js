@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Dialogs from './components/Dialogs/Dialogs';
-import Header from './components/Navbar/Header/Header';
+import Dialogues from './components/Dialogues/Dialogues';
+// import Header from './components/Navbar/Header/Header';
 import Music from './components/Music/Music';
 import Navbar from './components/Navbar/Navbar';
 import News from './components/News/News';
@@ -17,7 +17,7 @@ const App = () => {
         <div className='app-wrapper-content'>
           <Routes>
             <Route path='/profile' element={<Profile />} />
-            <Route path='/dialogs' element={<Dialogs />} />
+            <Route path='/dialogues' element={<Dialogues />} />
             <Route path='/news' element={<News />} />
             <Route path='/music' element={<Music />} />
             <Route path='/settings' element={<Settings />} />

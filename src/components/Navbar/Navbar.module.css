@@ -10,25 +10,45 @@
   }
   
   .item{
-    margin: 5px;
+    margin-bottom:10px;
     padding: 5px;
+    display: flex;
+    justify-content: start;
+  }
+
+  .item svg{
+    position: relative;
+    margin-right: 24px;
+    top: 5px;
   }
 
   a{
     cursor: pointer;
     text-decoration: none;
+    max-width: 255px;
+    width: 100%;
+    padding: 18px;
+    transition: all .3s;
   }
 
-  .disactive{
+  .disactive {
     color: #A4A6B3;
   }
 
-  .active{
-    color: #3751FF;
+  .active {
+    position: relative;
+    color: #DDE2FF;
+    background-color: #9fa2b417;
+    border-left: 3px solid #DDE2FF;
+    left: -3px;
+  }
+  
+  .active > svg {
+    fill: #DDE2FF;
   }
 
   hr{
-    color: #A4A6B3;
-    height: 0;
-    margin-top: 40px;
+    color: beige;
+    height: 1px;
+    margin: 45px 0 40px;
   }
