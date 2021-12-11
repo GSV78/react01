@@ -22,7 +22,7 @@
     top: 5px;
   }
 
-  a{
+  .item a{
     cursor: pointer;
     text-decoration: none;
     max-width: 255px;

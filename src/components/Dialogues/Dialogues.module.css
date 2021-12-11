@@ -1,6 +1,6 @@
 .dialoguesInner{
     display: grid;
-    grid-template-columns: 3fr 9fr;
+    grid-template-columns: 2fr 8fr;
     grid-template-areas: 'd m';
     font-family: 'Mulish', sans-serif;
     color: #252733;
@@ -12,12 +12,20 @@
     font-weight: 500;
     font-size: 20px;
     padding: 10px;
-    background-color: #9fa2b417;
+    background-color: beige;
     border-right: 1px solid ;
 }
 
-.dialog{
-    margin-bottom: 15px;
+.dialog a{
+    display: inline-block;
+    margin-bottom: 30px;
+    text-decoration: none;
+    color: #252733;
+    transition: all .3s;
+}
+
+.dialog > .active{
+    color: #3751FF;
 }
 
 .dialog img{

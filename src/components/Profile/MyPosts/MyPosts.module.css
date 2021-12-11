@@ -1,0 +1,19 @@
+.myPost{
+    padding: 15px;
+}
+.newPosts{
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.newPosts textarea{
+    width: 500px;
+    height: 100px;
+    font-family: 'Mullish';
+    font-size: 20px;
+}
+.newPosts button{
+    width: 100px;
+    height: 50px;
+    font-family: 'Mullish';
+    font-size: 20px;
+}

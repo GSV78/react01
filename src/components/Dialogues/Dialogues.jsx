@@ -1,46 +1,58 @@
+import { NavLink } from 'react-router-dom'
 import css from './Dialogues.module.css'
 import icon from './icon.svg'
 
-const Dialogues = () => {
+const Dialog = (props) => {
+    return (
+        <div className={css.dialog}>
+            <NavLink to={'/dialogues/' + props.id} className={navData => navData.isActive ? css.active : css.disactive}><img src={icon} />{props.name}</NavLink>
+        </div>
+    )
+}
+
+const Message = (props) => {
+    return (
+        <div className={css.message}>
+            {props.message}
+        </div>
+    )
+}
+
+const Dialogues = (props) => {
+    let dialoguesData = [
+        { id: 1, name: 'Ольга' },
+        { id: 2, name: 'Тоня' },
+        { id: 3, name: 'Санёк' },
+        { id: 4, name: 'Серега' },
+        { id: 5, name: 'Леха' },
+        { id: 6, name: 'Максим' },
+    ]
+
+    let dialogElements = dialoguesData.map(el => <Dialog id={el.id} name={el.name} />)
+
+    let messagesData = [
+        { id: 1, message: 'Привет!' },
+        { id: 2, message: 'Йо-йо!!' },
+        { id: 3, message: 'Ыыыыы!!!' },
+        { id: 4, message: 'Крутяк!' },
+        { id: 5, message: 'Пока!' },
+    ]
+
+    let messagesElements = messagesData.map(el => <Message message={el.message} />)
+
     return (
         <div className={css.dialoguesInner}>
             <div className={css.dialogues}>
                 <div className={css.title}>Диалоги</div>
-                <div className={css.dialog}>
-                    <img src={icon} />
-                    Санек
-                </div>
-                <div className={css.dialog}>
-                    <img src={icon} />
-                    Антон
-                </div>
-                <div className={css.dialog}>
-                    <img src={icon} />
-                    Оля
-                </div>
-                <div className={css.dialog}>
-                    <img src={icon} />
-                    Тоня
-                </div>
-                <div className={css.dialog}>
-                    <img src={icon} />
-                    Никита
-                </div>
+                {
+                    dialogElements
+                }
             </div>
 
             <div className={css.messages}>
-                <div className={css.message}>
-                    Привет!
-                </div>
-                <div className={css.message}>
-                    Как сам?
-                </div>
-                <div className={css.message}>
-                    С наступающим! Йоу!
-                </div>
-                <div className={css.message}>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta quod architecto minima, incidunt mollitia eaque nostrum tempora facilis repudiandae suscipit veritatis velit, hic praesentium aliquam ea molestiae, maiores illum nihil vitae? Maxime, perspiciatis laboriosam rem minus aliquid nihil? Recusandae mollitia molestias odit, ut nulla incidunt ducimus corporis architecto tenetur quaerat!
-                </div>
+                {
+                    messagesElements
+                }
             </div>
         </div>
     )
