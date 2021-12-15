@@ -1,12 +1,10 @@
 import css from './MyPosts.module.css'
 import Post from './Post/Post';
 
-const MyPosts = () => {
-    let postsData = [
-        { id: 1, message: 'Привет! Я пишу код!', likesCount: 15 },
-        { id: 2, message: 'Йо-йо!!', likesCount: 11 },
-    ]
-    let posts = postsData.map(post => <Post message={post.message} likesCount={post.likesCount} />)
+const MyPosts = (props) => {
+
+    let posts = props.postsData.map(post => <Post message={post.message} likesCount={post.likesCount} />)
+
     return (
         <div className={css.myPost}>
             <h3> Мои посты</h3>

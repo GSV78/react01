@@ -1,0 +1,14 @@
+.friend{
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px;
+    color: #354ef0;
+    justify-items: center;
+    text-align: center;
+}
+
+.friend img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}

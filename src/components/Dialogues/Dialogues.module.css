@@ -21,7 +21,7 @@
     margin-bottom: 30px;
     text-decoration: none;
     color: #252733;
-    transition: all .3s;
+    transition: all .1s;
 }
 
 .dialog > .active{
@@ -43,8 +43,22 @@
     margin-left: 40px;
 }
 
+.message img{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
 .message{
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.message .me{
+    position: relative;
+    right: 0;
 }
 
 .title{

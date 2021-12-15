@@ -1,15 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap');
+*{
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+li{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  margin: 0;
+  font-size: inherit;
+}
+p{
+  margin: 0;
+}
+
 
 .app-wrapper{
   margin: 0 auto;
   display: grid;
   grid-template-columns: 2fr 10fr;
+  grid-template-rows: 50px 1fr;
   grid-template-areas: 
+  "h h"
   "n c";
   width: 100%;
   min-height: 100vh;
   background-color: #F7F8FC;
-  box-sizing: border-box;
   font-family: 'Mulish', sans-serif;
   font-weight: 400;
   font-size: 20px;

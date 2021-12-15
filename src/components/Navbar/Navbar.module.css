@@ -1,16 +1,16 @@
 .nav{
     grid-area: n;
     background-color: #363740	;
-    margin-right: 3px;
     padding: 10px;
     font-family: 'Mulish', sans-serif;
     font-weight: 400;
     font-size: 20px;
     line-height: 125%;
+    border-right: 1px solid beige;
   }
   
   .item{
-    margin-bottom:10px;
+    margin-bottom:5px;
     padding: 5px;
     display: flex;
     justify-content: start;
@@ -28,7 +28,7 @@
     max-width: 255px;
     width: 100%;
     padding: 18px;
-    transition: all .3s;
+    transition: all .1s;
   }
 
   .disactive {
@@ -50,5 +50,25 @@
   hr{
     color: beige;
     height: 1px;
-    margin: 45px 0 40px;
+    margin: 25px 0;
+  }
+
+  .friends{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .nav h3{
+    color: yellowgreen;
+    padding: 10px;
+    margin-left: 20px;
+    margin-top: 70px;
+  }
+
+  .title{
+    color: beige;
+    padding: 10px;
+    margin-left: 20px;
+    margin-top: 10px;
   }
