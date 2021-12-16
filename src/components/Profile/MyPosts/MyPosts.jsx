@@ -1,3 +1,5 @@
+import React from 'react';
+import InputPost from './InputPost/InputPost';
 import css from './MyPosts.module.css'
 import Post from './Post/Post';
 
@@ -7,15 +9,8 @@ const MyPosts = (props) => {
 
     return (
         <div className={css.myPost}>
+            <InputPost addPost={props.addPost} />
             <h3> Мои посты</h3>
-            <div className={css.newPosts}>
-                <div>
-                    <textarea></textarea>
-                </div>
-                <div>
-                    <button>Запостить</button>
-                </div>
-            </div>
             {
                 posts
             }

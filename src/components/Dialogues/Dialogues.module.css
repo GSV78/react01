@@ -38,9 +38,11 @@
     grid-area: m;
     font-weight: 400;
     font-size: 16px;
-    margin-top: 60px;
-    padding: 5px;
-    margin-left: 40px;
+    padding: 60px 10px 130px 40px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: bisque;
 }
 
 .message img{
@@ -56,13 +58,14 @@
     align-items: center;
 }
 
-.message .me{
-    position: relative;
-    right: 0;
+.message p,
+.message img{
+    display: inline-block;
 }
 
 .title{
     font-weight: 700;
     font-size: 24px;
     margin-bottom: 20px;
+    color: goldenrod;
 }

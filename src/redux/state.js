@@ -1,3 +1,5 @@
+import { rerenderEntireTree } from "../render";
+
 let state = {
     currentUser: { userName: 'Сергей', age: '43', img: './../../img/avatar1.jpg' },
     navPage: {
@@ -25,13 +27,34 @@ let state = {
             { id: 6, name: 'Максим' },
         ],
         messagesData: [
-            { id: 1, message: 'Привет!', myReplic: true },
-            { id: 2, message: 'Йо-йо!!', myReplic: false },
-            { id: 3, message: 'Ыыыыы!!!', myReplic: true },
-            { id: 4, message: 'Крутяк!', myReplic: false },
-            { id: 5, message: 'Пока!', myReplic: true },
+            { id: 1, message: 'Привет!' },
+            { id: 2, message: 'Йо-йо!!' },
+            { id: 3, message: 'Ыыыыы!!!' },
+            { id: 4, message: 'Крутяк!' },
+            { id: 5, message: 'Пока!' },
         ],
     },
+}
+
+export let addPost = (postMessage) => {
+    let posts = state.profilePage.postsData;
+    let newPost = {
+        id: posts.length,
+        message: postMessage,
+        likesCount: 0,
+    };
+    posts.push(newPost);
+    rerenderEntireTree(state);
+}
+
+export let addMessage = (message) => {
+    let messages = state.messagesPage.messagesData;
+    let newMessage = {
+        id: messages.length,
+        message: message,
+    };
+    messages.push(newMessage);
+    rerenderEntireTree(state);
 }
 
 export default state

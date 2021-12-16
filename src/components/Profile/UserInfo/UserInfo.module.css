@@ -1,6 +1,6 @@
   .user{
     display: flex;
-    margin: 40px 0;
+    margin: 40px 0 10px;
     align-items: center;
     font-size: 30px;
     font-weight: 500;

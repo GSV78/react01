@@ -4,10 +4,9 @@ import css from './../Dialogues.module.css'
 const Message = (props) => {
     return (
         <div className={css.message}>
-            <div className={() => props.myReplic ? css.me : css.notMe} >
-                <img />
-                {props.message}
-            </div >
+            <img />
+            <p> {props.message} </p>
+
         </div>
     )
 }

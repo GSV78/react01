@@ -1,6 +1,8 @@
 import css from './Dialogues.module.css'
 import Dialog from './Dialog/Dialog'
 import Message from './Message/Message'
+import React from 'react'
+import InputMessage from './InputMessage/InputMessage'
 
 const Dialogues = (props) => {
 
@@ -16,11 +18,11 @@ const Dialogues = (props) => {
                     dialogElements
                 }
             </div>
-
             <div className={css.messages}>
                 {
                     messagesElements
                 }
+                <InputMessage addMessage={props.addMessage} />
             </div>
         </div>
     )
