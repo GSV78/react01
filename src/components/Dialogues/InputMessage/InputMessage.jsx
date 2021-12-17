@@ -7,12 +7,17 @@ const InputMessage = (props) => {
     let newMessage = React.createRef()
 
     let sendNewMessage = () => {
-        props.addMessage(newMessage.current.value);
-        newMessage.current.value = '';
+        props.addMessage();
     }
+
+    let onMessageChange = () => {
+        let text = newMessage.current.value;
+        props.updateNewMessageText(text)
+    }
+
     return (
         <div className={css.inputMessage}>
-            <textarea ref={newMessage}></textarea>
+            <textarea onChange={onMessageChange} ref={newMessage} value={props.newMessageText}></textarea>
             <button onClick={sendNewMessage}>Отправить</button>
         </div>
     )

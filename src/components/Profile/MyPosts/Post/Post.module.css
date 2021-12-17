@@ -10,6 +10,7 @@
 
 .postAvaAndText{
     display: flex;
+    align-items: center;
 }
 
 .post p,
