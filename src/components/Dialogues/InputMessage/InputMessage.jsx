@@ -1,18 +1,17 @@
 import React from 'react'
 import css from './InputMessage.module.css'
-// import icon from './icon.svg'
 
 const InputMessage = (props) => {
 
     let newMessage = React.createRef()
 
     let sendNewMessage = () => {
-        props.store.addMessage();
+        props.dispatch({ type: 'ADD-MESSAGE' });
     }
 
     let onMessageChange = () => {
         let text = newMessage.current.value;
-        props.store.updateNewMessageText(text)
+        props.dispatch({ type: 'UPDATE-NEW-MESSAGE-TEXT', newMess: text });
     }
 
     return (

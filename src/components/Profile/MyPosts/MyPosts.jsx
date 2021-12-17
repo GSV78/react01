@@ -11,7 +11,7 @@ const MyPosts = (props) => {
         <div className={css.myPost}>
             <InputPost
                 newPostText={props.newPostText}
-                store={props.store}
+                dispatch={props.dispatch}
             />
             <h3> Мои посты</h3>
             {

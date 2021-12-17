@@ -24,7 +24,7 @@ const Dialogues = (props) => {
                 }
                 <InputMessage
                     newMessageText={props.state.newMessageText}
-                    store={props.store}
+                    dispatch={props.dispatch}
                 />
             </div>
         </div>

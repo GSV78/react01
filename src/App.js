@@ -7,8 +7,6 @@ import Navbar from './components/Navbar/Navbar';
 import News from './components/News/News';
 import Profile from './components/Profile/Profile';
 import Settings from './components/Settings/Settings';
-import { addMessage } from './redux/state';
-
 
 const App = (props) => {
   return (
@@ -21,13 +19,13 @@ const App = (props) => {
             <Profile
               state={props.state.profilePage}
               userData={props.state.currentUser}
-              store={props.store}
+              dispatch={props.dispatch}
             />
           } />
           <Route path='/dialogues/*' element={
             <Dialogues
               state={props.state.messagesPage}
-              store={props.store}
+              dispatch={props.dispatch}
             />} />
           <Route path='/news/*' element={<News />} />
           <Route path='/music/*' element={<Music />} />
