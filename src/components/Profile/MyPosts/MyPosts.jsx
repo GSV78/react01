@@ -10,9 +10,8 @@ const MyPosts = (props) => {
     return (
         <div className={css.myPost}>
             <InputPost
-                addPost={props.addPost}
                 newPostText={props.newPostText}
-                updateNewPostText={props.updateNewPostText}
+                store={props.store}
             />
             <h3> Мои посты</h3>
             {

@@ -7,12 +7,12 @@ const InputMessage = (props) => {
     let newMessage = React.createRef()
 
     let sendNewMessage = () => {
-        props.addMessage();
+        props.store.addMessage();
     }
 
     let onMessageChange = () => {
         let text = newMessage.current.value;
-        props.updateNewMessageText(text)
+        props.store.updateNewMessageText(text)
     }
 
     return (

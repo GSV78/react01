@@ -1,20 +1,15 @@
 import React from 'react'
-import { updateNewPostText } from '../../../../redux/state';
 import css from './InputPost.module.css'
-// import icon from './icon.svg'
 
 const InputPost = (props) => {
-    console.log(props);
-
     let newPost = React.createRef()
 
     let sendNewMessage = () => {
-        props.addPost();
+        props.store.addPost();
     }
 
     let onPostChange = () => {
-        let text = newPost.current.value;
-        updateNewPostText(text);
+        props.store.updateNewPostText(newPost.current.value);
     }
 
     return (
