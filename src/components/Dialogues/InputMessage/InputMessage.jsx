@@ -1,22 +1,21 @@
-import React from 'react'
+import { addMessageActionCreator, updateNewMessageTextActionCreator } from '../../../redux/state'
 import css from './InputMessage.module.css'
+
 
 const InputMessage = (props) => {
 
-    let newMessage = React.createRef()
-
     let sendNewMessage = () => {
-        props.dispatch({ type: 'ADD-MESSAGE' });
+        props.dispatch(addMessageActionCreator());
     }
 
-    let onMessageChange = () => {
-        let text = newMessage.current.value;
-        props.dispatch({ type: 'UPDATE-NEW-MESSAGE-TEXT', newMess: text });
+    let onMessageChange = (event) => {
+        let text = event.target.value
+        props.dispatch(updateNewMessageTextActionCreator(text));
     }
 
     return (
         <div className={css.inputMessage}>
-            <textarea onChange={onMessageChange} ref={newMessage} value={props.newMessageText}></textarea>
+            <textarea onChange={onMessageChange} value={props.newMessageText} placeholder='Введите своё сообщение'></textarea>
             <button onClick={sendNewMessage}>Отправить</button>
         </div>
     )
