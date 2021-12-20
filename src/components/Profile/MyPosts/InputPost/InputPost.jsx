@@ -11,7 +11,7 @@ const InputPost = (props) => {
         let text = event.target.value;
         props.dispatch(updateNewPostTextActionCreator(text))
     }
-
+    debugger
     return (
         <div className={css.inputPost}>
             <textarea onChange={onPostChange} value={props.newPostText} />

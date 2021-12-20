@@ -3,9 +3,10 @@ import css from './Profile.module.css';
 import UserInfo from './UserInfo/UserInfo';
 
 const Profile = (props) => {
+    debugger
     return (
         <div className={css.content}>
-            <UserInfo userData={props.userData} />
+            <UserInfo userData={props.state.currentUser} />
             <MyPosts
                 newPostText={props.state.newPostText}
                 postsData={props.state.postsData}
