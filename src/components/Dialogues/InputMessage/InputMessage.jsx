@@ -1,4 +1,4 @@
-import { addMessageActionCreator, updateNewMessageTextActionCreator } from '../../../redux/state'
+import { addMessageActionCreator, updateNewMessageTextActionCreator } from '../../../redux/dialogues-reducer'
 import css from './InputMessage.module.css'
 
 

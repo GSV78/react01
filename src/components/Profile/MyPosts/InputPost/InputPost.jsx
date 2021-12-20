@@ -1,4 +1,4 @@
-import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../../redux/state'
+import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../../redux/profile-reducer'
 import css from './InputPost.module.css'
 
 const InputPost = (props) => {
