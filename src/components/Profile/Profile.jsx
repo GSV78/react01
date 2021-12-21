@@ -6,11 +6,12 @@ const Profile = (props) => {
     debugger
     return (
         <div className={css.content}>
-            <UserInfo userData={props.state.currentUser} />
+            <UserInfo userData={props.store.getState().profilePage.currentUser} />
             <MyPosts
-                newPostText={props.state.newPostText}
-                postsData={props.state.postsData}
-                dispatch={props.dispatch}
+                store={props.store}
+            // newPostText={props.state.newPostText}
+            // postsData={props.state.postsData}
+            // dispatch={props.dispatch}
             />
         </div>
     )
