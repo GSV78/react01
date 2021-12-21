@@ -3,13 +3,13 @@ import css from './Navbar.module.css';
 import Friends from './Friends/Friends'
 
 const Navbar = (props) => {
-    let userData = props.userData
-    let friends = props.state.friends.map((el) => <Friends friendsName={el.friendsName} />)
+    // let userData = props.userData
+    // let friends = props.state.friends.map((el) => <Friends friendsName={el.friendsName} />)
     return (
         <nav className={css.nav}>
-            <div className={css.title}>
+            {/* <div className={css.title}>
                 {userData.userName}
-            </div>
+            </div> */}
             <hr />
             <div className={css.item}>
                 <NavLink to="/profile" className={navData => navData.isActive ? css.active : css.disactive}>
@@ -48,12 +48,12 @@ const Navbar = (props) => {
                     Настройки
                 </NavLink>
             </div>
-            <h3>Друзья</h3>
+            {/* <h3>Друзья</h3>
             <div className='friends'>
                 {
                     friends
                 }
-            </div>
+            </div> */}
         </nav >
     )
 }

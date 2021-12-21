@@ -6,9 +6,9 @@ const Profile = (props) => {
     debugger
     return (
         <div className={css.content}>
-            <UserInfo userData={props.store.getState().profilePage.currentUser} />
+            <UserInfo userData={props.storeOld.getState().profilePage.currentUser} />
             <MyPosts
-                store={props.store}
+                storeOld={props.storeOld}
             // newPostText={props.state.newPostText}
             // postsData={props.state.postsData}
             // dispatch={props.dispatch}
