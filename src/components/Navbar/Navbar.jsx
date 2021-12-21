@@ -2,14 +2,43 @@ import { NavLink } from 'react-router-dom';
 import css from './Navbar.module.css';
 import Friends from './Friends/Friends'
 
+const tail = (num) => {
+    num += ''
+    let numArr = num.split('');
+    let lastNum = numArr[numArr.length - 1];
+    if (numArr.length == 2 && (numArr[0] == 1)) {
+        return 'друзей';
+    } else {
+        switch (+lastNum) {
+            case 1:
+                return 'друг';
+            case 2:
+            case 3:
+            case 4:
+                return 'друга';
+            case 5:
+            case 6:
+            case 7:
+            case 8:
+            case 9:
+            case 0:
+                return 'друзей';
+        }
+    }
+}
+
 const Navbar = (props) => {
-    // let userData = props.userData
-    // let friends = props.state.friends.map((el) => <Friends friendsName={el.friendsName} />)
+    let userData = props.userData
+    let numberOfFriends = props.state.friends.length + ' ' + tail(props.state.friends.length);
+    let friends = props.state.friends.map((el) => <Friends friendsName={el.friendsName} />)
     return (
         <nav className={css.nav}>
-            {/* <div className={css.title}>
+            <div className={css.title}>
                 {userData.userName}
-            </div> */}
+            </div>
+            <div className={css.numberOfFriends}>
+                {numberOfFriends}
+            </div>
             <hr />
             <div className={css.item}>
                 <NavLink to="/profile" className={navData => navData.isActive ? css.active : css.disactive}>
@@ -48,12 +77,12 @@ const Navbar = (props) => {
                     Настройки
                 </NavLink>
             </div>
-            {/* <h3>Друзья</h3>
+            <h3>Друзья</h3>
             <div className='friends'>
                 {
                     friends
                 }
-            </div> */}
+            </div>
         </nav >
     )
 }

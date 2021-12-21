@@ -1,14 +1,17 @@
+import StoreContex from '../../StoreContex';
 import MyPosts from './MyPosts/MyPosts';
 import css from './Profile.module.css';
 import UserInfo from './UserInfo/UserInfo';
 
 const Profile = (props) => {
-    debugger
     return (
         <div className={css.content}>
-            <UserInfo userData={props.storeOld.getState().profilePage.currentUser} />
+            <StoreContex.Consumer>{
+                (currentUser) => (<UserInfo userData={currentUser} />)
+            }
+            </StoreContex.Consumer>
             <MyPosts
-                storeOld={props.storeOld}
+                store={props.store}
             // newPostText={props.state.newPostText}
             // postsData={props.state.postsData}
             // dispatch={props.dispatch}

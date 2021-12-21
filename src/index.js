@@ -7,11 +7,12 @@ import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import StoreContex from './StoreContex';
 
+let currentUser = store.getState().profilePage.currentUser;
 export let rerenderEntireTree = () => {
     ReactDOM.render(
         <React.StrictMode>
             <BrowserRouter>
-                <StoreContex.Provider value={store}>
+                <StoreContex.Provider value={currentUser}>
                     <App store={store} />
                 </StoreContex.Provider>
             </BrowserRouter>

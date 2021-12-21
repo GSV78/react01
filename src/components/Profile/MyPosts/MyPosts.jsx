@@ -5,13 +5,13 @@ import Post from './Post/Post';
 
 const MyPosts = (props) => {
 
-    let posts = props.storeOld.getState().profilePage.postsData.map(post => <Post message={post.message} likesCount={post.likesCount} id={post.id} />)
+    let posts = props.store.getState().profilePage.postsData.map(post => <Post message={post.message} likesCount={post.likesCount} id={post.id} />)
 
     return (
         <div className={css.myPost}>
             <InputPostContainer
-            // store={props.store}
-            // newPostText={props.newPostText}
+                store={props.store}
+            // newPostText={props.store.getState().profilePage.newPostText}
             // dispatch={props.dispatch}
             />
             <h3> Мои посты</h3>

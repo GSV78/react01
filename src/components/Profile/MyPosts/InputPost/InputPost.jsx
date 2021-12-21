@@ -1,7 +1,7 @@
 import css from './InputPost.module.css'
 
 const InputPost = (props) => {
-
+    debugger
     let onAddPost = () => {
         props.addPost()
         // props.dispatch(addPostActionCreator())

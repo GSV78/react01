@@ -67,8 +67,15 @@
   }
 
   .title{
+    font-size: 24px;
     color: beige;
     padding: 10px;
     margin-left: 20px;
     margin-top: 10px;
+  }
+  
+  .numberOfFriends{
+    font-size: 16px;
+    color: beige;
+    margin-left: 30px;
   }
