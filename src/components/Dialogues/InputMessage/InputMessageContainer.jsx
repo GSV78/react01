@@ -13,7 +13,11 @@ const InputMessageContainer = (props) => {
     }
 
     return (
-        <InputMessage addMessage={sendNewMessage} updateNewMessageText={onMessageChange} newMessageText={props.store.getState().dialoguesPage.newMessageText} />
+        <InputMessage
+            addMessage={sendNewMessage}
+            updateNewMessageText={onMessageChange}
+            newMessageText={props.store.getState().dialoguesPage.newMessageText}
+        />
     )
 }
 

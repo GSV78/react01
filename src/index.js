@@ -5,16 +5,17 @@ import App from './App';
 import store from './redux/redux-store'
 import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
-import StoreContex from './StoreContex';
+import { Provider } from 'react-redux';
 
 let currentUser = store.getState().profilePage.currentUser;
+
 export let rerenderEntireTree = () => {
     ReactDOM.render(
         <React.StrictMode>
             <BrowserRouter>
-                <StoreContex.Provider value={currentUser}>
+                <Provider store={currentUser}>
                     <App store={store} />
-                </StoreContex.Provider>
+                </Provider>
             </BrowserRouter>
         </React.StrictMode>,
         document.getElementById('root')

@@ -11,7 +11,11 @@ const InputPostContainer = (props) => {
     }
 
     return (
-        < InputPost updateNewPostText={onPostChange} addPost={addPost} newPostText={props.store.getState().profilePage.newPostText} />
+        < InputPost
+            updateNewPostText={onPostChange}
+            addPost={addPost}
+            newPostText={props.store.getState().profilePage.newPostText}
+        />
     )
 }
 

@@ -14,13 +14,13 @@ const App = (props) => {
   return (
     <div className='app-wrapper'>
       <Header />
-      <StoreContex.Consumer>{
-        (currentUser) => (
+      <StoreContex.Consumer>
+        {(currentUser) => (
           <Navbar
             state={props.store.getState().navPage}
             userData={currentUser}
           />)
-      }
+        }
       </StoreContex.Consumer>
       <div className='app-wrapper-content'>
         <Routes>

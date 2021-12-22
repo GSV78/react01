@@ -3,8 +3,7 @@ import css from './Navbar.module.css';
 import Friends from './Friends/Friends'
 
 const tail = (num) => {
-    num += ''
-    let numArr = num.split('');
+    let numArr = (num + '').split('');
     let lastNum = numArr[numArr.length - 1];
     if (numArr.length == 2 && (numArr[0] == 1)) {
         return 'друзей';
