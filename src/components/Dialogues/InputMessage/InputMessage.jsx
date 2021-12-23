@@ -5,13 +5,12 @@ const InputMessage = (props) => {
 
     let onSendNewMessage = () => {
         props.addMessage()
-        // props.dispatch(addMessageActionCreator());
     }
 
     let onMessageChange = (event) => {
+        debugger
         let text = event.target.value
         props.updateNewMessageText(text)
-        // props.dispatch(updateNewMessageTextActionCreator(text));
     }
 
     return (

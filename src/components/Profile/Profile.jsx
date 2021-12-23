@@ -1,4 +1,3 @@
-import StoreContex from '../../StoreContex';
 import MyPosts from './MyPosts/MyPosts';
 import css from './Profile.module.css';
 import UserInfo from './UserInfo/UserInfo';
@@ -6,15 +5,12 @@ import UserInfo from './UserInfo/UserInfo';
 const Profile = (props) => {
     return (
         <div className={css.content}>
-            <StoreContex.Consumer>{
-                (currentUser) => (<UserInfo userData={currentUser} />)
-            }
-            </StoreContex.Consumer>
+            <UserInfo userData={props.profilePage.currentUser} />
             <MyPosts
-                store={props.store}
-            // newPostText={props.state.newPostText}
-            // postsData={props.state.postsData}
-            // dispatch={props.dispatch}
+                newPostText={props.profilePage.newPostText}
+                postsData={props.profilePage.postsData}
+                addPost={props.addPost}
+                updateNewPostText={props.updateNewPostText}
             />
         </div>
     )

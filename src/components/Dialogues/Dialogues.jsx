@@ -1,14 +1,13 @@
 import css from './Dialogues.module.css'
 import Dialog from './Dialog/Dialog'
 import Message from './Message/Message'
-// import React from 'react'
-import InputMessageContainer from './InputMessage/InputMessageContainer'
+import InputMessage from './InputMessage/InputMessage'
 
 const Dialogues = (props) => {
 
-    let dialogElements = props.store.getState().dialoguesPage.dialoguesData.map(el => <Dialog id={el.id} name={el.name} />)
+    let dialogElements = props.dialoguesPage.dialoguesData.map(el => <Dialog id={el.id} name={el.name} />)
 
-    let messagesElements = props.store.getState().dialoguesPage.messagesData.map(el => <Message message={el.message} myReplic={el.myReplic} />)
+    let messagesElements = props.dialoguesPage.messagesData.map(el => <Message message={el.message} />)
 
     return (
         <div className={css.dialoguesInner}>
@@ -22,10 +21,10 @@ const Dialogues = (props) => {
                 {
                     messagesElements
                 }
-                <InputMessageContainer
-                    store={props.store}
-                // newMessageText={props.state.newMessageText}
-                // dispatch={props.dispatch}
+                <InputMessage
+                    newMessageText={props.dialoguesPage.newMessageText}
+                    addMessage={props.addMessage}
+                    updateNewMessageText={props.updateNewMessageText}
                 />
             </div>
         </div>

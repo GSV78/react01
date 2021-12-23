@@ -1,42 +1,22 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Dialogues from './components/Dialogues/Dialogues';
+import DialoguesContainer from './components/Dialogues/DialoguesContainer';
 import Header from './components/Header/Header';
 import Music from './components/Music/Music';
-import Navbar from './components/Navbar/Navbar';
+import NavbarContainer from './components/Navbar/NavbarContainer';
 import News from './components/News/News';
-import Profile from './components/Profile/Profile';
+import ProfileContainer from './components/Profile/ProfileContainer';
 import Settings from './components/Settings/Settings';
-import StoreContex from './StoreContex';
 
 const App = (props) => {
-
   return (
     <div className='app-wrapper'>
       <Header />
-      <StoreContex.Consumer>
-        {(currentUser) => (
-          <Navbar
-            state={props.store.getState().navPage}
-            userData={currentUser}
-          />)
-        }
-      </StoreContex.Consumer>
+      <NavbarContainer />
       <div className='app-wrapper-content'>
         <Routes>
-          <Route path='/profile/*' element={
-            <Profile
-              store={props.store}
-            // state={props.state.profilePage}
-            // dispatch={props.dispatch}
-            />
-          } />
-          <Route path='/dialogues/*' element={
-            <Dialogues
-              store={props.store}
-            // state={props.state.dialoguesPage}
-            // dispatch={props.dispatch}
-            />} />
+          <Route path='/profile/*' element={<ProfileContainer />} />
+          <Route path='/dialogues/*' element={<DialoguesContainer />} />
           <Route path='/news/*' element={<News />} />
           <Route path='/music/*' element={<Music />} />
           <Route path='/settings/*' element={<Settings />} />

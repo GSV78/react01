@@ -27,9 +27,9 @@ const tail = (num) => {
 }
 
 const Navbar = (props) => {
-    let userData = props.userData
-    let numberOfFriends = props.state.friends.length + ' ' + tail(props.state.friends.length);
-    let friends = props.state.friends.map((el) => <Friends friendsName={el.friendsName} />)
+    let userData = props.currentUser
+    let numberOfFriends = props.navPage.friends.length + ' ' + tail(props.navPage.friends.length);
+    let friends = props.navPage.friends.map((el) => <Friends friendsName={el.friendsName} />)
     return (
         <nav className={css.nav}>
             <div className={css.title}>

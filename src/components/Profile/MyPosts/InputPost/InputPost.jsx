@@ -1,16 +1,13 @@
 import css from './InputPost.module.css'
 
 const InputPost = (props) => {
-    debugger
     let onAddPost = () => {
         props.addPost()
-        // props.dispatch(addPostActionCreator())
     }
 
     let onPostChange = (event) => {
         let text = event.target.value;
         props.updateNewPostText(text)
-        // props.dispatch(updateNewPostTextActionCreator(text))
     }
     return (
         <div className={css.inputPost}>
