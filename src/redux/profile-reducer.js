@@ -4,13 +4,14 @@ const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 let initialState = {
     currentUser: { userName: 'Сергей', age: '43', img: './../../img/avatar1.jpg' },
     postsData: [
-        { id: 1, message: 'Привет! Я пишу код!', likesCount: 15 },
         { id: 2, message: 'Йоу-йоу!!! 42!', likesCount: 11 },
+        { id: 1, message: 'Привет! Я пишу код!', likesCount: 15 },
     ],
     newPostText: '',
 }
 
 const profileReducer = (state = initialState, action) => {
+
     switch (action.type) {
         case (ADD_POST): {
             let newPost = {
@@ -18,16 +19,17 @@ const profileReducer = (state = initialState, action) => {
                 message: state.newPostText,
                 likesCount: 0,
             };
-            let stateCopy = { ...state };
-            stateCopy.postsData = [...state.postsData];
-            stateCopy.postsData.unshift(newPost);
-            stateCopy.newPostText = '';
-            return stateCopy
+            return {
+                ...state,
+                newPostText: '',
+                postsData: [newPost, ...state.postsData],
+            }
         }
         case (UPDATE_NEW_POST_TEXT): {
-            let stateCopy = { ...state };
-            stateCopy.newPostText = action.newText;
-            return stateCopy
+            return {
+                ...state,
+                newPostText: action.newText,
+            }
         }
         default:
             return state
