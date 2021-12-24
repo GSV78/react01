@@ -1,5 +1,5 @@
 import React from 'react';
-import InputPostContainer from './InputPost/InputPostContainer.jsx';
+import InputPost from './InputPost/InputPost.jsx';
 import css from './MyPosts.module.css'
 import Post from './Post/Post';
 
@@ -9,7 +9,7 @@ const MyPosts = (props) => {
 
     return (
         <div className={css.myPost}>
-            <InputPostContainer
+            <InputPost
                 newPostText={props.newPostText}
                 addPost={props.addPost}
                 updateNewPostText={props.updateNewPostText}
