@@ -1,22 +1,24 @@
-import { addPostActionCreator, updateNewPostTextActionCreator } from './../../redux/Users-reducer'
+import { followAC, setUsersAC, unfollowAC } from './../../redux/users-reducer'
 import { connect } from 'react-redux';
 import Users from './Users'
 
 let mapStateToProps = (state) => {
     return {
-        UsersPage: state.UsersPage
+        users: state.usersPage.users
     }
 }
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        // addPost: () => {
-        //     dispatch(addPostActionCreator());
-        // },
-        // updateNewPostText: (text) => {
-        //     dispatch(updateNewPostTextActionCreator(text));
-        // }
-
+        follow: (userID) => {
+            dispatch(followAC(userID))
+        },
+        unfollow: (userID) => {
+            dispatch(unfollowAC(userID))
+        },
+        setUsers: (users) => {
+            dispatch(setUsersAC(users))
+        },
     }
 }
 
