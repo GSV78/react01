@@ -3,12 +3,7 @@ const UNFOLLOW_USER = 'UNFOLLOW_USER';
 const SET_USERS = 'SET_USERS';
 
 let initialState = {
-    users: [
-        { id: 1, photoUrl: 'https://lh3.googleusercontent.com/PjEgzixcJoDC7-aeaVEOX6splcOvnDqlmb-dqtE5LT4kZ2qVSlPhH7SGiXMQWmqKyKs', following: true, fullName: 'Ольга', status: 'Я босс!', location: { city: 'Владимир', country: 'Россия' } },
-        { id: 2, photoUrl: 'https://lh3.googleusercontent.com/PjEgzixcJoDC7-aeaVEOX6splcOvnDqlmb-dqtE5LT4kZ2qVSlPhH7SGiXMQWmqKyKs', following: false, fullName: 'Тоня', status: 'Я красавица!', location: { city: 'Владимир', country: 'Россия' } },
-        { id: 3, photoUrl: 'https://lh3.googleusercontent.com/PjEgzixcJoDC7-aeaVEOX6splcOvnDqlmb-dqtE5LT4kZ2qVSlPhH7SGiXMQWmqKyKs', following: true, fullName: 'Санек', status: 'Я Дед Мороз!', location: { city: 'Владимир', country: 'Россия' } },
-        { id: 4, photoUrl: 'https://lh3.googleusercontent.com/PjEgzixcJoDC7-aeaVEOX6splcOvnDqlmb-dqtE5LT4kZ2qVSlPhH7SGiXMQWmqKyKs', following: false, fullName: 'Сергей', status: 'Я добрый волшебник!', location: { city: 'Владимир', country: 'Россия' } },
-    ]
+    users: []
 }
 const usersReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -30,14 +25,18 @@ const usersReducer = (state = initialState, action) => {
                     ...state,
                     users: state.users.map(el => {
                         if (el.id == action.userID) {
-                            return ({ ...el, following: false })
+                            return { ...el, following: false }
                         } else return el
                     })
                 }
             )
         }
         case (SET_USERS): {
-            return { ...state, users: [{ ...state.users, ...action.users }] }
+            debugger
+            return {
+                ...state,
+                users: [...state.users, ...action.users]
+            }
         }
         default:
             return state

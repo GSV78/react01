@@ -12,6 +12,7 @@
 
 .usersInner button{
     width: 100px;
+    background-color: rgb(216, 186, 112);
 }
 
 .user {
@@ -21,21 +22,24 @@
     max-width: 550px;
     margin: 10px;
     padding: 20px;
+    border: 1px solid bisque;
+    border-radius: 10px;
 }
 
 .avaAndButton {
     text-align: center;
-    padding-right: 15px;
+    padding-right: 35px;
 
 }
 
 .main{
     justify-content: flex-start;
     flex: 1;
+    padding: 10px;
 }
 
 .main div {
-    color:orangered;
+    color:rgb(243, 223, 120);
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 10px;
@@ -43,10 +47,10 @@
 
 .main p{
     font-style: italic;
-    color: rgb(56, 69, 243);
-
+    color: #DDE2FF;
+    
 }
 
 .location{
-    color: rgb(209, 98, 98);
+    color: rgb(152, 158, 243);
 }

@@ -3,7 +3,8 @@
     grid-template-columns: 2fr 8fr;
     grid-template-areas: 'd m';
     font-family: 'Mulish', sans-serif;
-    color: #252733;
+    background-color: #363740	;
+    color: #A4A6B3;
     height: 100%;
 }
 
@@ -12,7 +13,6 @@
     font-weight: 500;
     font-size: 20px;
     padding: 10px;
-    background-color: beige;
     border-right: 1px solid ;
 }
 
@@ -20,7 +20,7 @@
     display: inline-block;
     margin-bottom: 30px;
     text-decoration: none;
-    color: #252733;
+    color: #A4A6B3;
     transition: all .1s;
 }
 
@@ -42,7 +42,6 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    background-color: bisque;
 }
 
 .message img{
