@@ -1,6 +1,52 @@
+.usersInner {
+    height: 100%;
+
+}
+
 .usersInner img{
     width: 50px;
     height: 50px;
     border-radius: 50%;
     border: 1px solid #000;
+}
+
+.usersInner button{
+    width: 100px;
+}
+
+.user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 550px;
+    margin: 10px;
+    padding: 20px;
+}
+
+.avaAndButton {
+    text-align: center;
+    padding-right: 15px;
+
+}
+
+.main{
+    justify-content: flex-start;
+    flex: 1;
+}
+
+.main div {
+    color:orangered;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.main p{
+    font-style: italic;
+    color: rgb(56, 69, 243);
+
+}
+
+.location{
+    color: rgb(209, 98, 98);
 }

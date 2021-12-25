@@ -2,6 +2,14 @@
     padding: 15px;
     height: auto;
 }
+
+.myPost h3{
+    color:beige;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+
 /* .newPosts{
     padding: 10px;
     margin-bottom: 10px;

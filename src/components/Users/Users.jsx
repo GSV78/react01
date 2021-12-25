@@ -4,7 +4,7 @@ const Users = (props) => {
     return (
         <div className={css.usersInner}>
             {
-                props.users.map(el => <div key={el.id}>
+                props.users.map(el => <div key={el.id} className={css.user}>
                     <div className={css.avaAndButton}>
                         <div>
                             <img src={el.photoUrl} />
@@ -17,12 +17,12 @@ const Users = (props) => {
                     </div>
                     <div className={css.main}>
                         <div>{el.fullName}</div>
-                        <div>{el.status}</div>
+                        <p>{el.status}</p>
                     </div>
-                    <span>
+                    <div className={css.location}>
                         <div>{el.location.city}</div>
                         <div>{el.location.country}</div>
-                    </span>
+                    </div>
                 </div>)
             }
         </div>
