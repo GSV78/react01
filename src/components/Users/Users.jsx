@@ -1,16 +1,17 @@
 import * as axios from 'axios'
 import css from './Users.module.css'
-import userPhoto from '../../asets/images/avatar2.jpg'
+import userPhoto from '../../asets/images/avatar3.jpg'
 
 const Users = (props) => {
-    debugger
+    console.log(props.users.length)
     if (props.users.length === 0) {
         axios
             .get("https://social-network.samuraijs.com/api/1.0/users")
-            .then(response => (
-                props.setUsers(response.data.items)
-            ))
+            .then(response => {
+                props.setUsersList(response.data.items)
+            })
     }
+
     return (
         <div className={css.usersInner}>
             {
@@ -37,5 +38,4 @@ const Users = (props) => {
         </div>
     )
 }
-
 export default Users

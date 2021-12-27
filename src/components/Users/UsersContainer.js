@@ -7,7 +7,6 @@ let mapStateToProps = (state) => {
         users: state.usersPage.users
     }
 }
-
 let mapDispatchToProps = (dispatch) => {
     return {
         follow: (userID) => {
@@ -16,12 +15,10 @@ let mapDispatchToProps = (dispatch) => {
         unfollow: (userID) => {
             dispatch(unfollowAC(userID))
         },
-        setUsers: (users) => {
+        setUsersList: (users) => {
             dispatch(setUsersAC(users))
         },
     }
 }
-debugger
-const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(Users)
 
-export default UsersContainer
+export default connect(mapStateToProps, mapDispatchToProps)(Users)

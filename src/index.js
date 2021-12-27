@@ -14,7 +14,7 @@ ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
             <Provider store={store}>
-                <App currentUser={store.getState().profilePage.currentUser} />
+                <App />
             </Provider>
         </BrowserRouter>
     </React.StrictMode>,

@@ -5,11 +5,9 @@ const SET_USERS = 'SET_USERS';
 let initialState = {
     users: []
 }
-
 const usersReducer = (state = initialState, action) => {
-    debugger
     switch (action.type) {
-        case (FOLLOW_USER): {
+        case (FOLLOW_USER):
             return (
                 {
                     ...state,
@@ -20,8 +18,8 @@ const usersReducer = (state = initialState, action) => {
                     })
                 }
             )
-        }
-        case (UNFOLLOW_USER): {
+
+        case (UNFOLLOW_USER):
             return (
                 {
                     ...state,
@@ -32,12 +30,13 @@ const usersReducer = (state = initialState, action) => {
                     })
                 }
             )
-        }
+
         case (SET_USERS): {
+            console.log('dispatch', [...state.users, ...action.users]);
             return (
                 {
                     ...state,
-                    users: [...state.users, ...action.users]
+                    users: action.users
                 }
             )
         }

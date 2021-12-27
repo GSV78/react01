@@ -9,7 +9,8 @@ import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import Settings from './components/Settings/Settings';
 
-const App = (props) => {
+const App = () => {
+  console.log('App');
   return (
     <div className='app-wrapper'>
       <Header />
