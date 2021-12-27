@@ -12,7 +12,7 @@ let reducers = combineReducers({
 });
 
 let store = createStore(reducers);
-
+debugger
 window.store = store;
 
 export default store
