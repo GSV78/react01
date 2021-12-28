@@ -9,20 +9,43 @@ class Users extends React.Component {
     // }
     componentDidMount() {
         axios
-            .get("https://social-network.samuraijs.com/api/1.0/users")
+            .get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pagesSize}&page=${this.props.currentPage}`)
             .then(response => {
-                this.props.setUsersList(response.data.items)
+                this.props.setUsersList(response.data.items);
+                this.props.setTotalCount(response.data.totalCount);
+            })
+    }
+    onPageChanged = (page) => {
+        this.props.setCurrentPage(page)
+        axios
+            .get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pagesSize}&page=${page}`)
+            .then(response => {
+                this.props.setUsersList(response.data.items);
+                this.props.setTotalCount(response.data.totalCount);
             })
     }
     render() {
+        let pagesCount = this.props.totalCount / this.props.pagesSize
+
+        let pages = [];
+        for (let i = 1; i <= Math.ceil(pagesCount); i++) {
+            pages.push(i)
+        }
         return (
             <div className={css.usersInner}>
-                <div>
-                    <span className={css.selectedPage}>1 </span>
-                    <span>2 </span>
-                    <span>3 </span>
-                    <span>4 </span>
-                    <span>5 </span>
+                <div className={css.pagination}>
+
+                    {pages.map(page => {
+
+                        return (
+                            <span className={this.props.currentPage === page && css.selectedPage} onClick={() => this.onPageChanged(page)}>
+                                {page + ' '}
+                            </span>
+                        )
+
+                    })
+                    }
+
                 </div>
                 {
                     this.props.users.map(el => <div key={el.id} className={css.user}>
