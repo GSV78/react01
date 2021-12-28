@@ -1,6 +1,6 @@
 .usersInner {
     height: 100%;
-
+    color: beige;
 }
 
 .usersInner img{
@@ -65,4 +65,9 @@
     height: 100px;
     border: 1px solid bisque;
     border-radius: 10px;
+}
+
+.selectedPage {
+    font-weight: 700;
+    color: orangered;
 }
