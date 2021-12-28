@@ -13,6 +13,7 @@
 .usersInner button{
     width: 100px;
     background-color: rgb(216, 186, 112);
+    border-radius: 5px;
 }
 
 .user {
@@ -53,4 +54,15 @@
 
 .location{
     color: rgb(152, 158, 243);
+}
+
+.usersInner .getUsersButton {
+    margin:20px 150px;
+    background-color: red;
+    color: aquamarine;
+    font-size: 24px;
+    width: 250px;
+    height: 100px;
+    border: 1px solid bisque;
+    border-radius: 10px;
 }
