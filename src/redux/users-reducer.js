@@ -4,11 +4,13 @@ const SET_USERS = 'SET_USERS';
 const SET_TOTAL_COUNTS = 'SET_TOTAL_COUNTS';
 const SET_CURRENT_PAGE = 'SET_ACTIVE_PAGE';
 
+
 let initialState = {
     users: [],
     pagesSize: 15,
     totalCount: 0,
     currentPage: 1,
+    isFetching: false,
 }
 const usersReducer = (state = initialState, action) => {
     switch (action.type) {

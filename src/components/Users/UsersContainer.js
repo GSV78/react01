@@ -3,6 +3,7 @@ import { followAC, unfollowAC, setUsersAC, setTotalCountAC, setCurrentPageAC } f
 import { connect } from 'react-redux';
 import Users from './Users'
 import * as axios from 'axios'
+import preloader from './../../assets/images/loader.gif'
 
 class UsersAPIComponent extends React.Component {
     // constructor(props) {
@@ -12,6 +13,7 @@ class UsersAPIComponent extends React.Component {
         axios
             .get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pagesSize}&page=${this.props.currentPage}`)
             .then(response => {
+                debugger
                 this.props.setUsersList(response.data.items);
                 this.props.setTotalCount(response.data.totalCount);
             })
@@ -26,15 +28,18 @@ class UsersAPIComponent extends React.Component {
             })
     }
     render() {
-        return <Users
-            users={this.props.users}
-            totalCount={this.props.totalCount}
-            pagesSize={this.props.pagesSize}
-            currentPage={this.props.currentPage}
-            follow={this.props.follow}
-            unfollow={this.props.unfollow}
-            onPageChanged={this.onPageChanged}
-        />
+        return <>
+            {this.props.isFetching ? <img src={preloader} /> : null}
+            <Users
+                users={this.props.users}
+                totalCount={this.props.totalCount}
+                pagesSize={this.props.pagesSize}
+                currentPage={this.props.currentPage}
+                follow={this.props.follow}
+                unfollow={this.props.unfollow}
+                onPageChanged={this.onPageChanged}
+            />
+        </>
     }
 }
 
@@ -44,6 +49,7 @@ let mapStateToProps = (state) => {
         pagesSize: state.usersPage.pagesSize,
         totalCount: state.usersPage.totalCount,
         currentPage: state.usersPage.currentPage,
+        isFetching: state.usersPage.isFetching,
     }
 }
 let mapDispatchToProps = (dispatch) => {

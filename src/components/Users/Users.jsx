@@ -2,7 +2,6 @@ import css from './Users.module.css'
 import userPhoto from '../../assets/images/avatar4.jpg'
 
 const Users = (props) => {
-    debugger
     let pagesCount = props.totalCount / props.pagesSize
 
     let pages = [];
