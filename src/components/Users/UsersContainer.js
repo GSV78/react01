@@ -1,35 +1,39 @@
 import React from 'react';
-import { followAC, unfollowAC, setUsersAC, setTotalCountAC, setCurrentPageAC } from './../../redux/users-reducer'
+import { followAC, unfollowAC, setUsersAC, setTotalCountAC, setCurrentPageAC, toggleIsFetchingAC } from './../../redux/users-reducer'
 import { connect } from 'react-redux';
 import Users from './Users'
 import * as axios from 'axios'
-import preloader from './../../assets/images/loader.gif'
+
+import Preloader from '../common/Preloader/Preloader';
 
 class UsersAPIComponent extends React.Component {
     // constructor(props) {
     //     super(props);
     // }
     componentDidMount() {
+        this.props.toggleIsFetching(true)
         axios
             .get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pagesSize}&page=${this.props.currentPage}`)
             .then(response => {
-                debugger
+                this.props.toggleIsFetching(false)
                 this.props.setUsersList(response.data.items);
                 this.props.setTotalCount(response.data.totalCount);
             })
     }
     onPageChanged = (page) => {
         this.props.setCurrentPage(page)
+        this.props.toggleIsFetching(true)
         axios
             .get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pagesSize}&page=${page}`)
             .then(response => {
+                this.props.toggleIsFetching(false)
                 this.props.setUsersList(response.data.items);
                 this.props.setTotalCount(response.data.totalCount);
             })
     }
     render() {
-        return <>
-            {this.props.isFetching ? <img src={preloader} /> : null}
+        return (<div>
+            <Preloader isFetching={this.props.isFetching} />
             <Users
                 users={this.props.users}
                 totalCount={this.props.totalCount}
@@ -39,7 +43,7 @@ class UsersAPIComponent extends React.Component {
                 unfollow={this.props.unfollow}
                 onPageChanged={this.onPageChanged}
             />
-        </>
+        </div>)
     }
 }
 
@@ -68,6 +72,9 @@ let mapDispatchToProps = (dispatch) => {
         },
         setCurrentPage: (currentPage) => {
             dispatch(setCurrentPageAC(currentPage))
+        },
+        toggleIsFetching: (isFetching) => {
+            dispatch(toggleIsFetchingAC(isFetching))
         },
     }
 }

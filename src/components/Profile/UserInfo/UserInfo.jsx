@@ -1,6 +1,6 @@
 import css from './UserInfo.module.css';
-import ava from './../../../img/avatar1.jpg'
-import banner from './../../../img/banner.jpg'
+import ava from './../../../assets/images/avatar1.jpg'
+import banner from './../../../assets/images/banner.jpg'
 
 
 const UserInfo = (props) => {
