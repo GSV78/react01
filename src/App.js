@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import DialoguesContainer from './components/Dialogues/DialoguesContainer';
-import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 import Music from './components/Music/Music';
 import NavbarContainer from './components/Navbar/NavbarContainer';
 import News from './components/News/News';
@@ -13,7 +13,7 @@ const App = () => {
   console.log('App');
   return (
     <div className='app-wrapper'>
-      <Header />
+      <HeaderContainer />
       <NavbarContainer />
       <div className='app-wrapper-content'>
         <Routes>

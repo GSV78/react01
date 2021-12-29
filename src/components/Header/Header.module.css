@@ -3,11 +3,13 @@
     background-color: #363740;
     color: beige;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     font-weight: 700;
     height: 100%;
     width: 100%;
     border-bottom: 1px solid beige;
+    padding: 0 10px;
 }
 
 .header img{
@@ -15,3 +17,12 @@
     margin: 5px 10px 0 5px;
     padding: 5px;
   }
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.time{
+    justify-self: right;
+}
