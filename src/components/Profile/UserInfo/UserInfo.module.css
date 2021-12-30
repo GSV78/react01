@@ -20,3 +20,12 @@
   max-height: 60vh;
   object-fit: cover;
   }
+
+  .description div:first-child{
+    font-size: 30px;
+    color: chocolate;
+  }
+
+  .description div:last-child{
+    font-size: 20px;
+  }

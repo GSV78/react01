@@ -5,7 +5,7 @@ import UserInfo from './UserInfo/UserInfo';
 const Profile = (props) => {
     return (
         <div className={css.content}>
-            <UserInfo userData={props.profilePage.currentUser} />
+            <UserInfo userProfile={props.profilePage.userProfile} />
             <MyPosts
                 newPostText={props.profilePage.newPostText}
                 postsData={props.profilePage.postsData}

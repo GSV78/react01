@@ -6,7 +6,6 @@ import Post from './Post/Post';
 const MyPosts = (props) => {
 
     let posts = props.postsData.map(post => <Post message={post.message} likesCount={post.likesCount} id={post.id} />)
-
     return (
         <div className={css.myPost}>
             <InputPost
