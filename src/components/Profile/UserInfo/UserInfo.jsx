@@ -1,7 +1,7 @@
 import css from './UserInfo.module.css';
 // import ava from './../../../assets/images/avatar1.jpg'
 // import banner from './../../../assets/images/banner.jpg'
-import nophoto from './../../../assets/images/nophoto.jpg'
+import nophoto from '../../../assets/images/nophoto.jpg'
 import Preloader from '../../common/Preloader/Preloader';
 
 
@@ -17,11 +17,11 @@ const UserInfo = (props) => {
                 props.userProfile.photos.large : null} />
             <div className={css.user}>
                 <div className={css.userAva}>
-                    <img src={props.userProfile.photos.small != null ? props.userProfile.photos.small : { nophoto }} />
+                    <img src={props.userProfile.photos.small != null ? props.userProfile.photos.small : nophoto} />
                 </div>
                 <div className={css.description}>
                     <div> {props.userProfile.fullName} </div>
-                    <div> немного обо мне: "{props.userProfile.aboutMe != null ? props.userProfile.aboutMe : null}" </div>
+                    <div> {props.userProfile.aboutMe != null ? `Немного обо мне: ${props.userProfile.aboutMe}` : null} </div>
                 </div>
             </div>
         </div>

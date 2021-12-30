@@ -13,7 +13,7 @@ const MyPosts = (props) => {
                 addPost={props.addPost}
                 updateNewPostText={props.updateNewPostText}
             />
-            <h3> Мои посты</h3>
+            <h3> Мысли вслух</h3>
             {
                 posts
             }

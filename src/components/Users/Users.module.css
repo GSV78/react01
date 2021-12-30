@@ -10,14 +10,14 @@
 .usersInner img{
     width: 70px;
     height: 70px;
-    border-radius: 50%;
-    border: 1px solid #000;
+    border-radius: 15%;
+    border: 1px solid goldenrod;
 }
 
 .usersInner button{
     width: 100px;
     background-color: rgb(216, 186, 112);
-    border-radius: 5px;
+    border-radius: 15%;
 }
 
 .user {

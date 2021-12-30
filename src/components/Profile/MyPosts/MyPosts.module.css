@@ -1,10 +1,12 @@
 .myPost{
     padding: 15px;
+    margin-left: 10px;
     height: auto;
+
 }
 
 .myPost h3{
-    color:beige;
+    color: seagreen;
     margin-bottom: 20px;
     font-size: 24px;
 }
