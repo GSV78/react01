@@ -48,5 +48,9 @@ p{
 .app-wrapper-content{
   grid-area: c;
   background-color: #363740;
+  background-image: url('/src/assets/images/banner.jpg');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
