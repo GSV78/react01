@@ -8,7 +8,6 @@ const InputMessage = (props) => {
     }
 
     let onMessageChange = (event) => {
-        debugger
         let text = event.target.value
         props.updateNewMessageText(text)
     }

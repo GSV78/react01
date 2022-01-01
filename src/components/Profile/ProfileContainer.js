@@ -3,7 +3,7 @@ import { addPost, updateNewPostText, setUserProfile } from './../../redux/profil
 import { connect } from 'react-redux';
 import { useMatch } from 'react-router-dom';
 import Profile from './Profile'
-import axios from 'axios';
+import * as axios from 'axios';
 
 class ProfileAPIComponent extends React.Component {
     componentDidMount() {

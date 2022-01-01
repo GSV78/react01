@@ -1,4 +1,5 @@
 import React from 'react';
+import AuthContainer from './Auth/AuthContainer';
 import css from './Header.module.css';
 import logo from './logo.svg'
 
@@ -19,6 +20,7 @@ class Header extends React.Component {
                     <p>СОЦИУМ</p>
                 </div>
                 <span className={css.time}>
+                    <AuthContainer />
                     {this.props.currentTime}
                 </span >
             </header >

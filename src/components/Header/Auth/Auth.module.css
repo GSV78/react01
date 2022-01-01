@@ -1,0 +1,15 @@
+.loginBlock{
+    margin-right: 30px;
+    background-color: crimson;
+    color: darkkhaki;
+    padding: 2px 15px;
+    border-radius: 5px;
+    font-size: 24px;
+}
+
+.currentUser{
+    margin-right: 30px;
+    color: darkkhaki;
+    padding: 2px 15px;
+
+}

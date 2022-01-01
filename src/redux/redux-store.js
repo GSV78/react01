@@ -4,6 +4,7 @@ import dialoguesReducer from './dialogues-reducer';
 import navReducer from './nav-reducer'
 import usersReducer from './users-reducer';
 import headerReducer from './header-reducer';
+import authReducer from './auth-reducer';
 
 let reducers = combineReducers({
     headerPage: headerReducer,
@@ -11,6 +12,7 @@ let reducers = combineReducers({
     dialoguesPage: dialoguesReducer,
     navPage: navReducer,
     usersPage: usersReducer,
+    auth: authReducer,
 });
 
 let store = createStore(reducers);
