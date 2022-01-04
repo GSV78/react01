@@ -29,13 +29,16 @@
     padding: 20px;
     border: 1px solid bisque;
     border-radius: 10px;
-    cursor: pointer;
 }
 
 .avaAndButton {
     text-align: center;
     padding-right: 35px;
 
+}
+
+.avaAndButton button{
+    cursor: pointer;
 }
 
 .main{

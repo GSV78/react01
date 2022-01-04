@@ -13,7 +13,10 @@ class UsersAPIComponent extends React.Component {
     componentDidMount() {
         this.props.toggleIsFetching(true)
         axios
-            .get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pagesSize}&page=${this.props.currentPage}`)
+            .get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pagesSize}&page=${this.props.currentPage}`,
+                {
+                    withCredentials: true
+                })
             .then(response => {
                 this.props.toggleIsFetching(false)
                 this.props.setUsers(response.data.items);
@@ -24,7 +27,10 @@ class UsersAPIComponent extends React.Component {
         this.props.setCurrentPage(page)
         this.props.toggleIsFetching(true)
         axios
-            .get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pagesSize}&page=${page}`)
+            .get(`https://social-network.samuraijs.com/api/1.0/users?count=${this.props.pagesSize}&page=${page}`,
+                {
+                    withCredentials: true
+                })
             .then(response => {
                 this.props.toggleIsFetching(false)
                 this.props.setUsers(response.data.items);

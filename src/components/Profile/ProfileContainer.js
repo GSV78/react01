@@ -8,7 +8,7 @@ import * as axios from 'axios';
 class ProfileAPIComponent extends React.Component {
     componentDidMount() {
 
-        let userId = this.props.match ? this.props.match.params.userId : 2;
+        let userId = this.props.match ? this.props.match.params.userId : this.props.currentUserID;
         axios
             .get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`)
             .then(response => {
@@ -25,7 +25,8 @@ class ProfileAPIComponent extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        profilePage: state.profilePage
+        profilePage: state.profilePage,
+        currentUserID: state.auth.id
     }
 }
 
