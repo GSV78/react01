@@ -21,10 +21,31 @@ export const userAPI = {
                 })
         )
     },
-    getUsers2: (pagesSize = 10, currentPage = 1) => {
+
+    authMe: () => {
         return (
             instance
-                .get(`users?count=${pagesSize}&page=${currentPage}`,)
+                .get(`auth/me`)
+                .then(responce => {
+                    return responce.data;
+                })
+        )
+    },
+
+    follow: (id) => {
+        return (
+            instance
+                .post(`follow/${id}`)
+                .then(responce => {
+                    return responce.data;
+                })
+        )
+    },
+
+    unfollow: (id) => {
+        return (
+            instance
+                .delete(`follow/${id}`)
                 .then(responce => {
                     return responce.data;
                 })
