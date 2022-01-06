@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from "react-redux";
 import Auth from "./Auth";
-import { autMeThunkCreator } from './../../../redux/auth-reducer'
+import { getAuthUserData } from './../../../redux/auth-reducer'
 
 class AuthAPI extends React.Component {
     componentDidMount() {
-        this.props.authMe()
+        this.props.getAuthUserData()
     }
     render() {
         return (
@@ -22,4 +22,4 @@ let mapStateToProps = (state) => {
 
 
 
-export default connect(mapStateToProps, { authMe: autMeThunkCreator })(AuthAPI)
+export default connect(mapStateToProps, { getAuthUserData })(AuthAPI)

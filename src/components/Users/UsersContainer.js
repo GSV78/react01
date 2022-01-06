@@ -1,5 +1,5 @@
 import React from 'react';
-import { follow, unfollow, setCurrentPage, toggleIsFollowingProgress, getUsersThunkCreator, followThunkCreator, unfollowThunkCreator } from './../../redux/users-reducer'
+import { setCurrentPage, getUsersThunkCreator, followThunkCreator, unfollowThunkCreator } from './../../redux/users-reducer'
 import { connect } from 'react-redux';
 import Users from './Users'
 import Preloader from '../common/Preloader/Preloader';
@@ -46,6 +46,6 @@ let mapStateToProps = (state) => {
 
 
 export default connect(mapStateToProps, {
-    setCurrentPage, toggleIsFollowingProgress,
+    setCurrentPage,
     getUsers: getUsersThunkCreator, follow: followThunkCreator, unfollow: unfollowThunkCreator
 })(UsersAPIComponent)

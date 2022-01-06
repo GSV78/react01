@@ -49,7 +49,7 @@ const profileReducer = (state = initialState, action) => {
 
 export const addPost = () => ({ type: ADD_POST })
 export const updateNewPostText = (text) => ({ type: UPDATE_NEW_POST_TEXT, newText: text })
-export const setUserProfile = (userProfile) => ({ type: SET_USER_PROFILE, userProfile })
+const setUserProfile = (userProfile) => ({ type: SET_USER_PROFILE, userProfile })
 
 export const getProfileThunkCreator = (id) => {
     return (dispatch) => {

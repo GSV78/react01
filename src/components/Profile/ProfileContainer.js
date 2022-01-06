@@ -1,5 +1,5 @@
 import React from 'react';
-import { addPost, updateNewPostText, setUserProfile, getProfileThunkCreator } from './../../redux/profile-reducer'
+import { addPost, updateNewPostText, getProfileThunkCreator } from './../../redux/profile-reducer'
 import { connect } from 'react-redux';
 import { useMatch } from 'react-router-dom';
 import Profile from './Profile'
@@ -34,7 +34,7 @@ const ProfileMatch = (props) => {
 }
 
 const ProfileContainer = connect(mapStateToProps, {
-    addPost, updateNewPostText, setUserProfile,
+    addPost, updateNewPostText,
     getProfile: getProfileThunkCreator
 })(ProfileMatch)
 

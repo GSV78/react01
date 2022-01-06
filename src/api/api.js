@@ -22,16 +22,6 @@ export const userAPI = {
         )
     },
 
-    authMe: () => {
-        return (
-            instance
-                .get(`auth/me`)
-                .then(responce => {
-                    return responce.data;
-                })
-        )
-    },
-
     follow: (id) => {
         return (
             instance
@@ -63,3 +53,14 @@ export const userAPI = {
     }
 }
 
+export const authAPI = {
+    authMe: () => {
+        return (
+            instance
+                .get(`auth/me`)
+                .then(responce => {
+                    return responce.data;
+                })
+        )
+    },
+}

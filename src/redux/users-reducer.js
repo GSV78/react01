@@ -95,13 +95,12 @@ export const unfollowSuccess = (userID) => ({ type: UNFOLLOW_USER, userID })
 export const setUsers = (users) => ({ type: SET_USERS, users })
 export const setTotalCount = (totalCount) => ({ type: SET_TOTAL_COUNTS, totalCount })
 export const setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage })
-export const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCING, isFetching })
-export const toggleIsFollowingProgress = (isFetching, userId) => ({ type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching, userId })
+const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCING, isFetching })
+const toggleIsFollowingProgress = (isFetching, userId) => ({ type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching, userId })
 
 export const getUsersThunkCreator = (pagesSize, currentPage) => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true))
-
         userAPI.getUsers(pagesSize, currentPage)
             .then(data => {
                 dispatch(toggleIsFetching(false));
