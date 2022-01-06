@@ -57,7 +57,7 @@
 .main p{
     font-style: italic;
     color: #DDE2FF;
-    
+    overflow-wrap: break-word;
 }
 
 .location{

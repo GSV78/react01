@@ -16,7 +16,7 @@ class Header extends React.Component {
         return (
             <header className={css.header} >
                 <div className={css.logo}>
-                    <img src={logo} />
+                    <img alt='logo' src={logo} />
                     <p>СОЦИУМ</p>
                 </div>
                 <span className={css.time}>

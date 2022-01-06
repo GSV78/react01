@@ -3,6 +3,8 @@ import { addPost, updateNewPostText, getProfileThunkCreator } from './../../redu
 import { connect } from 'react-redux';
 import { useMatch } from 'react-router-dom';
 import Profile from './Profile'
+import { withAuthRedirect } from '../../hoc/withAuthRedirect';
+import { compose } from 'redux';
 
 
 
@@ -18,15 +20,6 @@ class ProfileAPIComponent extends React.Component {
     }
 }
 
-
-let mapStateToProps = (state) => {
-    return {
-        profilePage: state.profilePage,
-        currentUserID: state.auth.id,
-        isAuth: state.auth.isAuth,
-    }
-}
-
 const ProfileMatch = (props) => {
     let match = useMatch("/profile/:userId");
     return (
@@ -34,10 +27,17 @@ const ProfileMatch = (props) => {
     )
 }
 
-const ProfileContainer = connect(mapStateToProps, {
-    addPost, updateNewPostText,
-    getProfile: getProfileThunkCreator
-})(ProfileMatch)
+let mapStateToProps = (state) => {
+    return {
+        profilePage: state.profilePage,
+        currentUserID: state.auth.id,
+    }
+}
 
-export default ProfileContainer
-
+export default compose(
+    connect(mapStateToProps, {
+        addPost, updateNewPostText,
+        getProfile: getProfileThunkCreator
+    }),
+    withAuthRedirect,
+)(ProfileMatch)

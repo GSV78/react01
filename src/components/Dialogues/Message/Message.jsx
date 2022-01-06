@@ -4,7 +4,7 @@ import css from './../Dialogues.module.css'
 const Message = (props) => {
     return (
         <div className={css.message}>
-            <img />
+            <img alt='ava' />
             <p> {props.message} </p>
 
         </div>

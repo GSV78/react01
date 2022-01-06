@@ -48,5 +48,5 @@ const dialoguesReducer = (state = initialState, action) => {
 
 export default dialoguesReducer
 
-export const addMessageActionCreator = () => ({ type: ADD_MESSAGE })
-export const updateNewMessageTextActionCreator = (text) => ({ type: UPDATE_NEW_MESSAGE_TEXT, newMess: text })
+export const addMessage = () => ({ type: ADD_MESSAGE })
+export const updateNewMessageText = (text) => ({ type: UPDATE_NEW_MESSAGE_TEXT, newMess: text })

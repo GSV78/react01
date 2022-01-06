@@ -5,7 +5,7 @@ import preloader from './../../../assets/images/loader.svg'
 const Preloader = (props) => {
     return (
         <div className={css.preloader}>
-            {props.isFetching ? <img src={preloader} /> : null}
+            {props.isFetching ? <img alt='preloader' src={preloader} /> : null}
         </div>
     )
 }

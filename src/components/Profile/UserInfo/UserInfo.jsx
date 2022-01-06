@@ -13,11 +13,11 @@ const UserInfo = (props) => {
     }
     return (
         <div className={css.userInfo}>
-            <img className={css.banner} src={props.userProfile.photos.large ?
+            <img alt='banner' className={css.banner} src={props.userProfile.photos.large ?
                 props.userProfile.photos.large : null} />
             <div className={css.user}>
                 <div className={css.userAva}>
-                    <img src={props.userProfile.photos.small != null ? props.userProfile.photos.small : nophoto} />
+                    <img alt='ava' src={props.userProfile.photos.small != null ? props.userProfile.photos.small : nophoto} />
                 </div>
                 <div className={css.description}>
                     <div> {props.userProfile.fullName} </div>

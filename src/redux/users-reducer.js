@@ -11,7 +11,7 @@ const TOGGLE_IS_FOLLOWING_PROGRESS = 'TOGGLE_IS_FOLLOWING_PROGRESS';
 
 let initialState = {
     users: [],
-    pagesSize: 15,
+    pagesSize: 10,
     totalCount: 0,
     currentPage: 1,
     isFetching: false,
@@ -24,7 +24,7 @@ const usersReducer = (state = initialState, action) => {
                 {
                     ...state,
                     users: state.users.map(el => {
-                        if (el.id == action.userID) {
+                        if (el.id === action.userID) {
                             return ({ ...el, followed: true })
                         } else return el
                     })
@@ -36,7 +36,7 @@ const usersReducer = (state = initialState, action) => {
                 {
                     ...state,
                     users: state.users.map(el => {
-                        if (el.id == action.userID) {
+                        if (el.id === action.userID) {
                             return { ...el, followed: false }
                         } else return el
                     })
@@ -81,7 +81,7 @@ const usersReducer = (state = initialState, action) => {
                     ...state,
                     followingInProgress: action.isFetching
                         ? [...state.followingInProgress, action.userId]
-                        : state.followingInProgress.filter(id => id != action.userId)
+                        : state.followingInProgress.filter(id => id !== action.userId)
                 }
             )
         }

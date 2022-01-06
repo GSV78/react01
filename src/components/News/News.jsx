@@ -2,7 +2,7 @@ import css from './News.module.css'
 
 const News = () => {
     return (
-        <div >
+        <div className={css.newsInner}>
             News
         </div>
     )

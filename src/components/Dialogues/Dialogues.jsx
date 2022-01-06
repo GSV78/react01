@@ -1,4 +1,3 @@
-
 import css from './Dialogues.module.css'
 import Dialog from './Dialog/Dialog'
 import Message from './Message/Message'
@@ -7,9 +6,9 @@ import { Navigate } from 'react-router-dom'
 
 const Dialogues = (props) => {
 
-    let dialogElements = props.dialoguesPage.dialoguesData.map(el => <Dialog id={el.id} name={el.name} />)
+    let dialogElements = props.dialoguesPage.dialoguesData.map(el => <Dialog key={el.id} id={el.id} name={el.name} />)
 
-    let messagesElements = props.dialoguesPage.messagesData.map(el => <Message message={el.message} />)
+    let messagesElements = props.dialoguesPage.messagesData.map(el => <Message key={el.id} message={el.message} />)
 
     if (!props.isAuth) {
         return <Navigate to={'/login'} />

@@ -18,7 +18,7 @@ const Users = (props) => {
 
                 {pages.map(page => {
                     return (
-                        <span className={props.currentPage === page && css.selectedPage} onClick={() => props.onPageChanged(page)}>
+                        <span key={page} className={props.currentPage === page ? css.selectedPage : undefined} onClick={() => props.onPageChanged(page)}>
                             {page}
                         </span>
                     )
@@ -28,12 +28,11 @@ const Users = (props) => {
 
             </div>
             {
-
                 props.users.map(el => <div key={el.id} className={css.user}>
                     <div className={css.avaAndButton}>
                         <div>
                             <NavLink to={'/profile/' + el.id}>
-                                <img src={el.photos.small != null ? el.photos.small : userPhoto} />
+                                <img alt='ava' src={el.photos.small != null ? el.photos.small : userPhoto} />
                             </NavLink>
                         </div>
                         <div>
@@ -52,10 +51,10 @@ const Users = (props) => {
                         <div>{el.name}</div>
                         <p>{el.status}</p>
                     </div>
-                    <div className={css.location}>
+                    {/* <div className={css.location}>
                         <div>{'el.location.city'}</div>
                         <div>{'el.location.country'}</div>
-                    </div>
+                    </div> */}
                 </div>
                 )}
             {/* <button className={css.getUsersButton} onClick={this.getUsers}>Загрузить пользователей</button> */}
