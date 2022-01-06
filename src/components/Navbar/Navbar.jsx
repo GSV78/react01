@@ -27,16 +27,16 @@ const tail = (num) => {
 }
 
 const Navbar = (props) => {
-    let numberOfFriends = props.navPage.friends.length + ' ' + tail(props.navPage.friends.length);
-    let friends = props.navPage.friends.map((el) => <Friends friendsName={el.friendsName} />)
+    // let numberOfFriends = props.navPage.friends.length + ' ' + tail(props.navPage.friends.length);
+    // let friends = props.navPage.friends.map((el) => <Friends friendsName={el.friendsName} />)
     return (
         <nav className={css.nav}>
-            <div className={css.title}>
+            {/* <div className={css.title}>
                 {props.currentUser}
-            </div>
-            <div className={css.numberOfFriends}>
+            </div> */}
+            {/* <div className={css.numberOfFriends}>
                 {numberOfFriends}
-            </div>
+            </div> */}
             <hr />
             <div className={css.item}>
                 <NavLink to="/profile" className={navData => navData.isActive ? css.active : css.disactive}>
@@ -82,12 +82,12 @@ const Navbar = (props) => {
                     Настройки
                 </NavLink>
             </div>
-            <h3>Друзья</h3>
+            {/* <h3>Друзья</h3>
             <div className='friends'>
                 {
                     friends
                 }
-            </div>
+            </div> */}
         </nav >
     )
 }

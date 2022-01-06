@@ -8,6 +8,7 @@ import News from './components/News/News';
 import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import Settings from './components/Settings/Settings';
+import Login from './components/Login/Login';
 
 const App = () => {
   console.log('App');
@@ -23,6 +24,8 @@ const App = () => {
           <Route path='/music/*' element={<Music />} />
           <Route path='/users/*' element={<UsersContainer />} />
           <Route path='/settings/*' element={<Settings />} />
+          <Route path='/login/*' element={<Login />} />
+
         </Routes>
       </div>
     </div>
