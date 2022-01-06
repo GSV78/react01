@@ -1,7 +1,6 @@
 import css from './Users.module.css'
 import userPhoto from '../../assets/images/nophoto.jpg'
 import { NavLink } from 'react-router-dom';
-import { userAPI } from '../../api/api';
 
 const Users = (props) => {
     let pagesCount = props.totalCount / props.pagesSize
@@ -41,27 +40,11 @@ const Users = (props) => {
                             {el.followed
                                 ?
                                 <button disabled={props.followingInProgress.some(id => id === el.id)} onClick={() => {
-                                    props.toggleIsFollowingProgress(true, el.id)
-                                    debugger
-                                    userAPI.unfollow(el.id)
-                                        .then(data => {
-                                            if (data.resultCode === 0) {
-                                                props.unfollow(el.id)
-                                            }
-                                            props.toggleIsFollowingProgress(false, el.id)
-                                        })
+                                    props.unfollow(el.id)
                                 }}>Отписаться</button>
 
                                 : <button disabled={props.followingInProgress.some(id => id === el.id)} onClick={() => {
-                                    props.toggleIsFollowingProgress(true, el.id)
-                                    userAPI.follow(el.id)
-                                        .then(data => {
-                                            if (data.resultCode === 0) {
-                                                props.follow(el.id)
-                                            }
-                                            props.toggleIsFollowingProgress(false, el.id)
-                                        })
-
+                                    props.follow(el.id)
                                 }}>Подписаться</button>}
                         </div>
                     </div>

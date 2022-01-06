@@ -1,7 +1,7 @@
 import React from 'react';
 import AuthContainer from './Auth/AuthContainer';
 import css from './Header.module.css';
-import logo from './logo.svg'
+import logo from './../../assets/images/logo.svg'
 
 class Header extends React.Component {
     componentDidMount() {

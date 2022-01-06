@@ -51,5 +51,15 @@ export const userAPI = {
                 })
         )
     },
+
+    getProfile: (id) => {
+        return (
+            instance
+                .get(`profile/${id}`)
+                .then(responce => {
+                    return responce.data;
+                })
+        )
+    }
 }
 

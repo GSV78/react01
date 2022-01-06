@@ -23,6 +23,11 @@
     align-items: center;
 }
 
+.logo img{
+    position: relative;
+    bottom: 3px;
+}
+
 .time{
     display: flex;
     justify-content: space-between;
