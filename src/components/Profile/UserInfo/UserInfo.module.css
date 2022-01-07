@@ -17,18 +17,18 @@
   }
   
   .banner{
-    width: 100%;
+    max-width: 1000px;
     max-height: 60vh;
     object-fit: cover;
   }
 
-  .description div:first-child{
+  .description .name{
     font-size: 36px;
     color: sandybrown;
     margin-bottom: 10px;
   }
 
-  .description div:last-child{
+  .description .aboutMe{
     font-size: 20px;
     color: mediumslateblue;
   }
