@@ -22,10 +22,10 @@ const UserInfo = (props) => {
                 </div>
                 <div className={css.description}>
                     <div className={css.name}> {props.userProfile.fullName} </div>
-                    <ProfileStatus status={'Hello, my friends'} />
-                    <div className={css.aboutMe}> {props.userProfile.aboutMe != null ? `Немного обо мне: ${props.userProfile.aboutMe}` : null} </div>
+                    <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
                 </div>
             </div>
+            <div className={css.aboutMe}> {props.userProfile.aboutMe != null ? `Немного обо мне: ${props.userProfile.aboutMe}` : null} </div>
         </div>
     )
 }
