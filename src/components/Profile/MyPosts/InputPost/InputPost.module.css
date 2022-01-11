@@ -7,7 +7,7 @@
     margin-bottom: 20px;
     resize: none;
 }
-.inputPost textarea{
+.inputPost .textarea{
     display: block;
     width: 50%;
     height: 140px;
@@ -17,7 +17,7 @@
     margin-bottom: 10px;
 }
 
-.inputPost button{
+.button{
     display: inline-block;
     height: 40px;
     border-radius: 10px;

@@ -9,9 +9,7 @@ const MyPosts = (props) => {
     return (
         <div className={css.myPost}>
             <InputPost
-                newPostText={props.newPostText}
                 addPost={props.addPost}
-                updateNewPostText={props.updateNewPostText}
             />
             <h3> Мысли вслух</h3>
             {

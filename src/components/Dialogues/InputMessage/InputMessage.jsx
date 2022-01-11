@@ -1,22 +1,26 @@
+import { reduxForm } from 'redux-form'
+import { Field } from 'redux-form'
 import css from './InputMessage.module.css'
 
+const InputMessageForm = (props) => {
+    return (
+        <form className={css.inputMessage} onSubmit={props.handleSubmit}>
+            <Field className={css.textarea} placeholder={'Введите сообщение'} name={'inputMessage'} component={'textarea'} />
+            <button className={css.button}>Запостить</button>
+        </form>
+    )
+}
+
+const InputMessageReduxForm = reduxForm({
+    form: 'inputMessage',
+})(InputMessageForm)
 
 const InputMessage = (props) => {
-
-    let onSendNewMessage = () => {
-        props.addMessage()
+    let onSubmit = values => {
+        props.addMessage(values.inputMessage);
     }
-
-    let onMessageChange = (event) => {
-        let text = event.target.value
-        props.updateNewMessageText(text)
-    }
-
     return (
-        <div className={css.inputMessage}>
-            <textarea onChange={onMessageChange} value={props.newMessageText} placeholder='Введите своё сообщение'></textarea>
-            <button onClick={onSendNewMessage}>Отправить</button>
-        </div>
+        <InputMessageReduxForm onSubmit={onSubmit} />
     )
 }
 

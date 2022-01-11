@@ -1,19 +1,25 @@
+import { reduxForm, Field } from 'redux-form'
 import css from './InputPost.module.css'
 
-const InputPost = (props) => {
-    let onAddPost = () => {
-        props.addPost()
-    }
+const InputPostForm = (props) => {
+    return (
+        <form className={css.inputPost} onSubmit={props.handleSubmit}>
+            <Field className={css.textarea} placeholder={'Введите сообщение'} name={'inputPost'} component={'textarea'} />
+            <button className={css.button}>Запостить</button>
+        </form>
+    )
+}
 
-    let onPostChange = (event) => {
-        let text = event.target.value;
-        props.updateNewPostText(text)
+const InputPostReduxForm = reduxForm({
+    form: 'inputPost',
+})(InputPostForm)
+
+const InputPost = (props) => {
+    const onSubmit = (values) => {
+        props.addPost(values.inputPost)
     }
     return (
-        <div className={css.inputPost}>
-            <textarea onChange={onPostChange} value={props.newPostText} />
-            <button onClick={onAddPost}>Запостить</button>
-        </div>
+        <InputPostReduxForm onSubmit={onSubmit} />
     )
 }
 
