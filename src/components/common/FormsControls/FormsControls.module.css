@@ -1,0 +1,16 @@
+.formControl{
+display: flex;
+justify-content: start;
+align-items: center;
+}
+
+.formControl.error input,
+.formControl.error textarea{
+    border: 2px red solid;
+}
+
+.formControl.error span{
+    color: red;
+    font-style: italic;
+    margin-left: 10px;
+}

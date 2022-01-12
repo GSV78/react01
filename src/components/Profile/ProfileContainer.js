@@ -1,5 +1,5 @@
 import React from 'react';
-import { addPost, updateNewPostText, getProfileThunkCreator, getStatus, updateStatus } from './../../redux/profile-reducer'
+import { addPost, getProfileThunkCreator, getStatus, updateStatus } from './../../redux/profile-reducer'
 import { connect } from 'react-redux';
 import { useMatch } from 'react-router-dom';
 import Profile from './Profile'
