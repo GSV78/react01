@@ -1,5 +1,5 @@
 import { reduxForm, Field } from 'redux-form'
-import { maxLengthCreator, required } from '../../../../utils/validators/validators'
+import { maxLengthCreator } from '../../../../utils/validators/validators'
 import { Textarea } from '../../../common/FormsControls/FormsControls'
 import css from './InputPost.module.css'
 
@@ -27,6 +27,7 @@ const InputPostReduxForm = reduxForm({
 const InputPost = (props) => {
     const onSubmit = (values) => {
         props.addPost(values.inputPost)
+        values.inputPost = ''
     }
     return (
         <InputPostReduxForm onSubmit={onSubmit} />

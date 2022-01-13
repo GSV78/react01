@@ -12,7 +12,6 @@ let initialState = {
         { id: 2, message: 'Йоу-йоу!!! 42!', likesCount: 11 },
         { id: 1, message: 'Привет! Я пишу код!', likesCount: 15 },
     ],
-    newPostText: '',
 }
 
 const profileReducer = (state = initialState, action) => {
@@ -26,7 +25,6 @@ const profileReducer = (state = initialState, action) => {
             };
             return {
                 ...state,
-                newPostText: '',
                 postsData: [newPost, ...state.postsData],
             }
         }
@@ -80,7 +78,5 @@ export const updateStatus = (status) => {
             })
     }
 }
-
-
 
 export default profileReducer

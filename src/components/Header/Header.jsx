@@ -5,11 +5,11 @@ import logo from './../../assets/images/logo.svg'
 
 class Header extends React.Component {
     componentDidMount() {
-        this.props.setTime(new Date().toLocaleTimeString())
+        this.props.setTime(new Date().toLocaleTimeString(), new Date().toLocaleDateString())
     }
     componentDidUpdate() {
-        setTimeout(() => {
-            this.props.setTime(new Date().toLocaleTimeString())
+        setInterval(() => {
+            this.props.setTime(new Date().toLocaleTimeString(), new Date().toLocaleDateString())
         }, 1000);
     }
     render() {
@@ -19,10 +19,11 @@ class Header extends React.Component {
                     <img alt='logo' src={logo} />
                     <p>СОЦИУМ</p>
                 </div>
-                <span className={css.time}>
-                    <AuthContainer />
-                    {this.props.currentTime}
-                </span >
+                <div className={css.auth}><AuthContainer /></div>
+                <div className={css.time}>
+                    <div>{this.props.currentTime}</div>
+                    <div>{this.props.currentDate}</div>
+                </div >
             </header >
         )
     }

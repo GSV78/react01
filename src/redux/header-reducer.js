@@ -10,6 +10,7 @@ const headerReducer = (state = initialState, action) => {
             return {
                 ...state,
                 currentTime: action.time,
+                currentDate: action.date,
             }
 
         default:
@@ -17,6 +18,6 @@ const headerReducer = (state = initialState, action) => {
     }
 }
 
-export const setTimeAC = (time) => ({ type: SET_TIME, time })
+export const setTime = (time, date) => ({ type: SET_TIME, time, date })
 
 export default headerReducer

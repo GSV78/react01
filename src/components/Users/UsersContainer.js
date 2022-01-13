@@ -1,10 +1,10 @@
 import React from 'react';
-import { setCurrentPage, getUsersThunkCreator, followThunkCreator, unfollowThunkCreator } from './../../redux/users-reducer'
+import { setCurrentPage, requestUsersThunkCreator, followThunkCreator, unfollowThunkCreator } from './../../redux/users-reducer'
 import { connect } from 'react-redux';
 import Users from './Users'
 import Preloader from '../common/Preloader/Preloader';
-import { withAuthRedirect } from '../../hoc/withAuthRedirect';
 import { compose } from 'redux';
+import { getPagesSize, getUsers, getCurrentPage, getTotalCount, getIsFetching, getFollowingInProgress } from '../../redux/users-selectors';
 
 
 class UsersAPIComponent extends React.Component {
@@ -12,11 +12,11 @@ class UsersAPIComponent extends React.Component {
     //     super(props);
     // }
     componentDidMount() {
-        this.props.getUsers(this.props.pagesSize, this.props.currentPage)
+        this.props.requestUsers(this.props.pagesSize, this.props.currentPage)
     }
     onPageChanged = (page) => {
         this.props.setCurrentPage(page)
-        this.props.getUsers(this.props.pagesSize, page)
+        this.props.requestUsers(this.props.pagesSize, page)
     }
     render() {
         return (<div>
@@ -39,21 +39,21 @@ class UsersAPIComponent extends React.Component {
 
 let mapStateToProps = (state) => {
     return {
-        users: state.usersPage.users,
-        pagesSize: state.usersPage.pagesSize,
-        totalCount: state.usersPage.totalCount,
-        currentPage: state.usersPage.currentPage,
-        isFetching: state.usersPage.isFetching,
-        followingInProgress: state.usersPage.followingInProgress,
+        users: getUsers(state),
+        pagesSize: getPagesSize(state),
+        totalCount: getTotalCount(state),
+        currentPage: getCurrentPage(state),
+        isFetching: getIsFetching(state),
+        followingInProgress: getFollowingInProgress(state),
     }
 }
 
 export default compose(
     connect(mapStateToProps, {
         setCurrentPage,
-        getUsers: getUsersThunkCreator, follow: followThunkCreator, unfollow: unfollowThunkCreator
+        requestUsers: requestUsersThunkCreator, follow: followThunkCreator, unfollow: unfollowThunkCreator
     }),
-    withAuthRedirect,
+    // withAuthRedirect,
 )(UsersAPIComponent)
 
 

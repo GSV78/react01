@@ -98,10 +98,10 @@ export const setCurrentPage = (currentPage) => ({ type: SET_CURRENT_PAGE, curren
 const toggleIsFetching = (isFetching) => ({ type: TOGGLE_IS_FETCING, isFetching })
 const toggleIsFollowingProgress = (isFetching, userId) => ({ type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching, userId })
 
-export const getUsersThunkCreator = (pagesSize, currentPage) => {
+export const requestUsersThunkCreator = (pagesSize, currentPage) => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true))
-        userAPI.getUsers(pagesSize, currentPage)
+        userAPI.requestUsers(pagesSize, currentPage)
             .then(data => {
                 dispatch(toggleIsFetching(false));
                 dispatch(setUsers(data.items));

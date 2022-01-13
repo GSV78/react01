@@ -10,7 +10,7 @@ import { compose } from 'redux';
 
 class ProfileAPIComponent extends React.Component {
     componentDidMount() {
-        let userId = this.props.match ? this.props.match.params.userId : this.props.currentUserID;
+        let userId = this.props.match ? this.props.match.params.userId : this.props.currentUserId;
         this.props.getProfile(userId)
         this.props.getStatus(userId)
     }
@@ -31,7 +31,7 @@ const ProfileMatch = (props) => {
 let mapStateToProps = (state) => {
     return {
         profilePage: state.profilePage,
-        currentUserID: state.auth.id,
+        currentUserId: state.auth.id,
         status: state.profilePage.status,
     }
 }

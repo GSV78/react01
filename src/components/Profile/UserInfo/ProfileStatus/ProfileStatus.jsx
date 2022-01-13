@@ -8,9 +8,12 @@ class ProfileStatus extends React.Component {
     }
 
     activateEditMode = () => {
-        this.setState({
-            editMode: true
-        })
+        debugger
+        if (this.props.userId === this.props.currentUserId) {
+            this.setState({
+                editMode: true
+            })
+        }
     }
 
     deactivateEditMode = () => {

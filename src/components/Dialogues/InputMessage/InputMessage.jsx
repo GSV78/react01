@@ -1,7 +1,7 @@
 import { reduxForm } from 'redux-form'
 import { Field } from 'redux-form'
 import css from './InputMessage.module.css'
-import { maxLengthCreator, required } from '../../../utils/validators/validators'
+import { maxLengthCreator } from '../../../utils/validators/validators'
 import { Textarea } from '../../common/FormsControls/FormsControls'
 
 const maxLength50 = maxLengthCreator(50)
@@ -28,6 +28,7 @@ const InputMessageReduxForm = reduxForm({
 const InputMessage = (props) => {
     let onSubmit = values => {
         props.addMessage(values.inputMessage);
+        values.inputMessage = ''
     }
     return (
         <InputMessageReduxForm onSubmit={onSubmit} />

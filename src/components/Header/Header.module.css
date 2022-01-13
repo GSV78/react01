@@ -16,9 +16,15 @@
     height: 70%;
     margin: 5px 10px 0 5px;
     padding: 5px;
-  }
+}
+
+.auth{
+    flex: 1;
+    text-align: right;
+}
 
 .logo {
+    justify-self: flex-start;
     display: flex;
     align-items: center;
 }
@@ -30,7 +36,17 @@
 
 .time{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+}
+
+.time div:first-child{
+    color:lightsalmon
+}
+
+.time div:last-child{
+    font-size: 16px;
+    color:mediumseagreen;
 }
 
