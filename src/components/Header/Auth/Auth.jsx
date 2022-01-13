@@ -8,6 +8,7 @@ const Auth = (props) => {
         return (
             <div className={css.currentUser} >
                 <span>{props.userData.login}</span>
+                <button className={css.logout} onClick={props.logout} >Выход</button>
             </div >
         )
     } else {

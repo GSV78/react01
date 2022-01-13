@@ -14,7 +14,7 @@ const InputMessageForm = (props) => {
                 placeholder={'Введите сообщение'}
                 name={'inputMessage'}
                 component={Textarea}
-                validate={[required, maxLength50]}
+                validate={[maxLength50]}
             />
             <button className={css.button}>Отправить</button>
         </form>

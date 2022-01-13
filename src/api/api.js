@@ -51,6 +51,24 @@ export const authAPI = {
                 })
         )
     },
+    authLogin: (email, password, rememberMe = false) => {
+        return (
+            instance
+                .post(`auth/login`, { email, password, rememberMe })
+                .then(responce => {
+                    return responce.data;
+                })
+        )
+    },
+    authLogout: (email, password, rememberMe = false) => {
+        return (
+            instance
+                .delete(`auth/login`)
+                .then(responce => {
+                    return responce.data;
+                })
+        )
+    },
 }
 
 export const profileAPI = {

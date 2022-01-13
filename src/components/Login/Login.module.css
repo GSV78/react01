@@ -4,3 +4,6 @@
     background-color: #363740;
     padding: 10px;
 }
+.formSummaryError{
+    color: orangered;
+}

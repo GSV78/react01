@@ -4,12 +4,20 @@
     color: darkkhaki;
     padding: 2px 15px;
     border-radius: 5px;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .currentUser{
     margin-right: 30px;
     color: darkkhaki;
     padding: 2px 15px;
+}
 
+.currentUser .logout{
+    margin-left: 10px;
+    background-color: crimson;
+    color: darkkhaki;
+    padding: 2px 15px;
+    border-radius: 5px;
+    font-size: 20px;
 }
