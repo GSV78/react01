@@ -8,7 +8,6 @@ class ProfileStatus extends React.Component {
     }
 
     activateEditMode = () => {
-        debugger
         if (this.props.userId === this.props.currentUserId) {
             this.setState({
                 editMode: true

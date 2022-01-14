@@ -3,7 +3,8 @@ import css from './UserInfo.module.css';
 // import banner from './../../../assets/images/banner.jpg'
 import nophoto from '../../../assets/images/nophoto.jpg'
 import Preloader from '../../common/Preloader/Preloader';
-import ProfileStatus from './ProfileStatus/ProfileStatus'
+// import ProfileStatus from './ProfileStatus/ProfileStatus'
+import ProfileStatusWithHooks from './ProfileStatus/ProfileStatusWithHooks';
 
 
 const UserInfo = (props) => {
@@ -22,7 +23,7 @@ const UserInfo = (props) => {
                 </div>
                 <div className={css.description}>
                     <div className={css.name}> {props.userProfile.fullName} </div>
-                    <ProfileStatus
+                    <ProfileStatusWithHooks
                         status={props.status}
                         updateStatus={props.updateStatus}
                         userId={props.userProfile.userId}
