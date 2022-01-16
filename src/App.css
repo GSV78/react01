@@ -47,7 +47,7 @@ p{
 
 .app-wrapper-content{
   grid-area: c;
-  background-color: #363740;
+  background-color: #101010;
   background-image: url('/src/assets/images/banner.jpg');
   background-position: top;
   background-repeat: no-repeat;

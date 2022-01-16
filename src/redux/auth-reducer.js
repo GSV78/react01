@@ -64,3 +64,4 @@ export const logout = (email, password, rememberMe) => {
 }
 
 export default authReducer
+

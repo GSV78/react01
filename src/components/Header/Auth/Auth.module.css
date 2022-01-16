@@ -5,6 +5,7 @@
     padding: 2px 15px;
     border-radius: 5px;
     font-size: 20px;
+    display: inline-block;
 }
 
 .currentUser{
