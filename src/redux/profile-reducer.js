@@ -1,9 +1,9 @@
 import { profileAPI } from './../api/api'
 
-const ADD_POST = 'ADD-POST';
-const DELETE_POST = 'DELETE_POST';
-const SET_USER_PROFILE = 'SET_USER_PROFILE';
-const SET_STATUS = 'SET_STATUS';
+const ADD_POST = 'samurai_network/profile/ADD-POST';
+const DELETE_POST = 'samurai_network/profile/DELETE_POST';
+const SET_USER_PROFILE = 'samurai_network/profile/SET_USER_PROFILE';
+const SET_STATUS = 'samurai_network/profile/SET_STATUS';
 
 
 let initialState = {

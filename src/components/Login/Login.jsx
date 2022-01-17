@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { reduxForm, Field } from 'redux-form'
 import { required } from '../../utils/validators/validators'
-import { Input } from '../common/FormsControls/FormsControls'
+import { Input, createField } from '../common/FormsControls/FormsControls'
 import { login, logout } from '../../redux/auth-reducer'
 import { Navigate } from "react-router-dom"
 import css from './Login.module.css'
@@ -9,39 +9,18 @@ import css from './Login.module.css'
 const LoginForm = ({ handleSubmit, error }) => {
     return (
         <form onSubmit={handleSubmit}>
-            <div>
-                <Field
-                    placeholder='Имя пользователя'
-                    name={'email'}
-                    type={'text'}
-                    component={Input}
-                    validate={[required]}
-                />
-            </div>
-            <div>
-                <Field
-                    placeholder='Пароль'
-                    name={'password'}
-                    type='password'
-                    component={Input}
-                    validate={[required]}
-                />
-            </div>
-            <div>
-                <Field
-                    type='checkbox'
-                    name={'rememberMe'}
-                    component={Input}
-                />
-                запомнить меня
-            </div>
-            {error ? (<div className={css.formSummaryError}>
-                {error}
-            </div>) : null}
+            {createField('Имя пользователя', 'email', 'text', Input, [required])}
+            {createField('Пароль', 'password', 'password', Input, [required])}
+            {createField(null, 'rememberMe', 'checkbox', Input, [], 'запомнить меня')}
+            {
+                error ? (<div className={css.formSummaryError}>
+                    {error}
+                </div>) : null
+            }
             <div>
                 <button>Войти</button>
             </div>
-        </form>
+        </form >
     )
 }
 

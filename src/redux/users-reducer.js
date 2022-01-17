@@ -1,13 +1,13 @@
 import { updateObjectInArray } from '../utils/object-helpers';
 import { userAPI } from './../api/api'
 
-const FOLLOW_USER = 'FOLLOW_USER';
-const UNFOLLOW_USER = 'UNFOLLOW_USER';
-const SET_USERS = 'SET_USERS';
-const SET_TOTAL_COUNTS = 'SET_TOTAL_COUNTS';
-const SET_CURRENT_PAGE = 'SET_ACTIVE_PAGE';
-const TOGGLE_IS_FETCING = 'TOGGLE_IS_FETCING';
-const TOGGLE_IS_FOLLOWING_PROGRESS = 'TOGGLE_IS_FOLLOWING_PROGRESS';
+const FOLLOW_USER = 'samurai_network/users/FOLLOW_USER';
+const UNFOLLOW_USER = 'samurai_network/users/UNFOLLOW_USER';
+const SET_USERS = 'samurai_network/users/SET_USERS';
+const SET_TOTAL_COUNTS = 'samurai_network/users/SET_TOTAL_COUNTS';
+const SET_CURRENT_PAGE = 'samurai_network/users/SET_ACTIVE_PAGE';
+const TOGGLE_IS_FETCING = 'samurai_network/users/TOGGLE_IS_FETCING';
+const TOGGLE_IS_FOLLOWING_PROGRESS = 'samurai_network/users/TOGGLE_IS_FOLLOWING_PROGRESS';
 
 
 let initialState = {
@@ -25,11 +25,6 @@ const usersReducer = (state = initialState, action) => {
                 {
                     ...state,
                     users: updateObjectInArray(state.users, action.userID, 'id', { followed: true })
-                    // users: state.users.map(el => {
-                    //     if (el.id === action.userID) {
-                    //         return ({ ...el, followed: true })
-                    //     } else return el
-                    // })
                 }
             )
 
@@ -38,11 +33,6 @@ const usersReducer = (state = initialState, action) => {
                 {
                     ...state,
                     users: updateObjectInArray(state.users, action.userID, 'id', { followed: false })
-                    // state.users.map(el => {
-                    //     if (el.id === action.userID) {
-                    //         return { ...el, followed: false }
-                    //     } else return el
-                    // })
                 }
             )
 

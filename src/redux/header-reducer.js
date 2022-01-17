@@ -1,4 +1,4 @@
-const SET_TIME = 'SET_TIME'
+const SET_TIME = 'samurai_network/header/SET_TIME'
 
 let initialState = {
     currentTime: null,

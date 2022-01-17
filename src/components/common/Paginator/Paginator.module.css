@@ -1,0 +1,10 @@
+.pagination{
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pagination span{
+    cursor: pointer;
+    margin: auto 5px;
+}

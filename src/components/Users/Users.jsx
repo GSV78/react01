@@ -1,32 +1,17 @@
 import css from './Users.module.css'
 import userPhoto from '../../assets/images/nophoto.jpg'
 import { NavLink } from 'react-router-dom';
+import Paginator from '../common/Paginator/Paginator';
 
 const Users = (props) => {
-    let pagesCount = props.totalCount / props.pagesSize
-
-    let pages = [];
-
-    for (let i = 1; i <= Math.ceil(pagesCount); i++) {
-        pages.push(i)
-    }
-    debugger
     return (
-
         <div className={css.usersInner}>
-            <div className={css.pagination}>
-
-                {pages.map(page => {
-                    return (
-                        <span key={page} className={props.currentPage === page ? css.selectedPage : undefined} onClick={() => props.onPageChanged(page)}>
-                            {page}
-                        </span>
-                    )
-
-                })
-                }
-
-            </div>
+            <Paginator
+                totalCount={props.totalCount}
+                pagesSize={props.pagesSize}
+                currentPage={props.currentPage}
+                onPageChanged={props.onPageChanged}
+            />
             {
                 props.users.map(el => <div key={el.id} className={css.user}>
                     <div className={css.avaAndButton}>
