@@ -14,6 +14,7 @@ const Profile = (props) => {
             <MyPosts
                 postsData={props.profilePage.postsData}
                 addPost={props.addPost}
+                deletePost={props.deletePost}
             />
         </div>
     )

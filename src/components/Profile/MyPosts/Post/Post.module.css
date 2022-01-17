@@ -23,3 +23,25 @@
 display: inline-block;
 margin-bottom: 20px;
 }
+
+.likeAndDelete {
+    display: flex;
+    justify-content: start;
+}
+
+.likeAndDelete span{
+    width: 100px;
+    color: chartreuse;
+}
+
+.likeAndDelete button{
+    display: inline-block;
+    height: 30px;
+    width: 80px;
+    padding: 5px;
+    color: #1a287e;
+    background-color: tomato;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 700;
+}

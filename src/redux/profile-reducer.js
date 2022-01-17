@@ -59,31 +59,25 @@ const setUserProfile = (userProfile) => ({ type: SET_USER_PROFILE, userProfile }
 const setStatus = (status) => ({ type: SET_STATUS, status })
 
 export const getProfileThunkCreator = (id) => {
-    return (dispatch) => {
-        profileAPI.getProfile(id)
-            .then(data => {
-                dispatch(setUserProfile(data))
-            })
+    return async (dispatch) => {
+        let data = await profileAPI.getProfile(id)
+        dispatch(setUserProfile(data))
     }
 }
 
 export const getStatus = (id) => {
-    return (dispatch) => {
-        profileAPI.getStatus(id)
-            .then(data => {
-                dispatch(setStatus(data))
-            })
+    return async (dispatch) => {
+        let data = await profileAPI.getStatus(id)
+        dispatch(setStatus(data))
     }
 }
 
 export const updateStatus = (status) => {
-    return (dispatch) => {
-        profileAPI.updateStatus(status)
-            .then(data => {
-                if (data.resultCode === 0) {
-                    dispatch(setStatus(status))
-                }
-            })
+    return async (dispatch) => {
+        let data = await profileAPI.updateStatus(status)
+        if (data.resultCode === 0) {
+            dispatch(setStatus(status))
+        }
     }
 }
 
