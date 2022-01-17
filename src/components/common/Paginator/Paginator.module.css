@@ -8,3 +8,8 @@
     cursor: pointer;
     margin: auto 5px;
 }
+
+.selectedPage {
+    font-weight: 700;
+    color: orangered;
+}
