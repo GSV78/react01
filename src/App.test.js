@@ -13,6 +13,6 @@ test('renders learn react link', () => {
       </Provider>
     </BrowserRouter>
   </React.StrictMode>);
-  const linkElement = screen.getByAltText('preloader')
-  expect(linkElement).toBeInTheDocument();
+  const preloader = screen.getByAltText('preloader')
+  expect(preloader).toBeInTheDocument();
 });
