@@ -1,18 +1,22 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import DialoguesContainer from './components/Dialogues/DialoguesContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Music from './components/Music/Music';
 import NavbarContainer from './components/Navbar/NavbarContainer';
 import News from './components/News/News';
 import UsersContainer from './components/Users/UsersContainer';
-import ProfileContainer from './components/Profile/ProfileContainer';
 import Settings from './components/Settings/Settings';
 import Login from './components/Login/Login';
-import React from 'react';
+import React, { Suspense } from 'react';
 import { connect } from 'react-redux';
 import { initializeApp } from './redux/app-reducer'
+import { withSuspense } from './hoc/withSuspense'
 import Preloader from './components/common/Preloader/Preloader';
+// import DialoguesContainer from './components/Dialogues/DialoguesContainer';
+// import ProfileContainer from './components/Profile/ProfileContainer'; 
+
+const DialoguesContainer = React.lazy(() => import('./components/Dialogues/DialoguesContainer'))
+const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'))
 
 class App extends React.Component {
   componentDidMount() {
@@ -29,14 +33,13 @@ class App extends React.Component {
           <NavbarContainer />
           <div className='app-wrapper-content'>
             <Routes>
-              <Route path='/profile/*' element={<ProfileContainer />} />
-              <Route path='/dialogues/*' element={<DialoguesContainer />} />
+              <Route path='/profile/*' element={withSuspense(ProfileContainer)} />
+              <Route path='/dialogues/*' element={withSuspense(DialoguesContainer)} />
               <Route path='/news/*' element={<News />} />
               <Route path='/music/*' element={<Music />} />
               <Route path='/users/*' element={<UsersContainer />} />
               <Route path='/settings/*' element={<Settings />} />
               <Route path='/login/*' element={<Login />} />
-
             </Routes>
           </div>
         </div>
