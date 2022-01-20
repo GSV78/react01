@@ -10,6 +10,8 @@ const Profile = (props) => {
                 status={props.profilePage.status}
                 updateStatus={props.updateStatus}
                 currentUserId={props.currentUserId}
+                isOwner={props.isOwner}
+                savePhoto={props.savePhoto}
             />
             <MyPosts
                 postsData={props.profilePage.postsData}

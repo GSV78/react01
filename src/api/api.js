@@ -1,4 +1,5 @@
 import * as axios from 'axios';
+import { Form } from 'redux-form';
 
 const instance = axios.create({
     withCredentials: true,
@@ -94,6 +95,21 @@ export const profileAPI = {
         return (
             instance
                 .put(`profile/status`, { status: status })
+                .then(responce => {
+                    return responce.data
+                })
+        )
+    },
+    savePhoto(file) {
+        const formData = new FormData()
+        formData.append('image', file)
+        return (
+            instance
+                .put(`profile/photo`, formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
                 .then(responce => {
                     return responce.data
                 })

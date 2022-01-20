@@ -4,6 +4,7 @@ const ADD_POST = 'samurai_network/profile/ADD-POST';
 const DELETE_POST = 'samurai_network/profile/DELETE_POST';
 const SET_USER_PROFILE = 'samurai_network/profile/SET_USER_PROFILE';
 const SET_STATUS = 'samurai_network/profile/SET_STATUS';
+const SAVE_PHOTO_SUCCESS = 'samurai_network/profile/SAVE_PHOTO_SUCCESS';
 
 
 let initialState = {
@@ -47,6 +48,15 @@ const profileReducer = (state = initialState, action) => {
                 status: action.status,
             }
         }
+        case (SAVE_PHOTO_SUCCESS): {
+            return {
+                ...state,
+                userProfile: {
+                    ...state.userProfile,
+                    photos: action.photos
+                }
+            }
+        }
         default:
             return state
 
@@ -55,6 +65,7 @@ const profileReducer = (state = initialState, action) => {
 
 export const addPost = (inputPost) => ({ type: ADD_POST, inputPost })
 export const deletePost = (postId) => ({ type: DELETE_POST, postId })
+export const savePhotoSuccess = (photos) => ({ type: SAVE_PHOTO_SUCCESS, photos })
 const setUserProfile = (userProfile) => ({ type: SET_USER_PROFILE, userProfile })
 const setStatus = (status) => ({ type: SET_STATUS, status })
 
@@ -77,6 +88,15 @@ export const updateStatus = (status) => {
         let data = await profileAPI.updateStatus(status)
         if (data.resultCode === 0) {
             dispatch(setStatus(status))
+        }
+    }
+}
+
+export const savePhoto = (file) => {
+    return async (dispatch) => {
+        let data = await profileAPI.savePhoto(file)
+        if (data.resultCode === 0) {
+            dispatch(savePhotoSuccess(data.data.photos))
         }
     }
 }
