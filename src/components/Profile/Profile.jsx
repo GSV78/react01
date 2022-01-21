@@ -13,12 +13,17 @@ const Profile = (props) => {
                 isOwner={props.isOwner}
                 savePhoto={props.savePhoto}
             />
-            <MyPosts
-                postsData={props.profilePage.postsData}
-                addPost={props.addPost}
-                deletePost={props.deletePost}
-            />
+            {
+                props.profilePage.userProfile && props.profilePage.userProfile.userId === props.currentUserId
+                    ? <MyPosts
+                        postsData={props.profilePage.postsData}
+                        addPost={props.addPost}
+                        deletePost={props.deletePost}
+                    />
+                    : null
+            }
         </div>
     )
 }
+
 export default Profile

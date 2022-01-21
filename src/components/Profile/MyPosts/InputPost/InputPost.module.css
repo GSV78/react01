@@ -1,4 +1,4 @@
-.inputPost{
+.inputPost {
     width: 100%;
     display: block;
     align-items: flex-end;
@@ -7,7 +7,8 @@
     margin-bottom: 20px;
     resize: none;
 }
-.inputPost .textarea{
+
+.inputPost .textarea {
     display: block;
     width: 200%;
     height: 140px;
@@ -17,10 +18,19 @@
     margin-bottom: 10px;
 }
 
-.button{
+.inputPost .button {
     display: inline-block;
     height: 40px;
-    border-radius: 10px;
+    border-radius: 7px;
     font-size: 20px;
+    background: transparent;
+    color: #aaaaaa;
+    font-weight: 700;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.inputPost .button:hover {
     background-color: chocolate;
+    color: #000;
 }

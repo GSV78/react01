@@ -3,7 +3,6 @@ import { setCurrentPage, requestUsersThunkCreator, followThunkCreator, unfollowT
 import { connect } from 'react-redux';
 import Users from './Users'
 import Preloader from '../common/Preloader/Preloader';
-import { compose } from 'redux';
 import { getPagesSize, getUsers, getCurrentPage, getTotalCount, getIsFetching, getFollowingInProgress } from '../../redux/users-selectors';
 
 
@@ -31,6 +30,7 @@ class UsersAPIComponent extends React.Component {
                 follow={this.props.follow}
                 unfollow={this.props.unfollow}
                 followingInProgress={this.props.followingInProgress}
+                setCurrentPage={this.setCurrentPage}
                 onPageChanged={this.onPageChanged}
             />
         </div>)
@@ -48,12 +48,9 @@ let mapStateToProps = (state) => {
     }
 }
 
-export default compose(
-    connect(mapStateToProps, {
-        setCurrentPage,
-        requestUsers: requestUsersThunkCreator, follow: followThunkCreator, unfollow: unfollowThunkCreator
-    }),
-    // withAuthRedirect,
-)(UsersAPIComponent)
+export default connect(mapStateToProps, {
+    setCurrentPage,
+    requestUsers: requestUsersThunkCreator, follow: followThunkCreator, unfollow: unfollowThunkCreator,
+})(UsersAPIComponent)
 
 

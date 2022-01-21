@@ -11,6 +11,7 @@ const Users = (props) => {
                 pagesSize={props.pagesSize}
                 currentPage={props.currentPage}
                 onPageChanged={props.onPageChanged}
+                setCurrentPage={props.setCurrentPage}
             />
             {
                 props.users.map(el => <div key={el.id} className={css.user}>

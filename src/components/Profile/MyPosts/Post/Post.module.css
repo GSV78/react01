@@ -1,27 +1,28 @@
-.post{
+.post {
     min-height: 50px;
 }
-.post img{
+
+.post img {
     height: 40px;
     width: 40px;
     margin: 5px;
     border-radius: 50%;
 }
 
-.postAvaAndText{
+.postAvaAndText {
     display: flex;
     align-items: center;
 }
 
 .post p,
-.post span{
+.post span {
     color: steelblue;
     width: 100%;
 }
 
-.post span{
-display: inline-block;
-margin-bottom: 20px;
+.post span {
+    display: inline-block;
+    margin-bottom: 20px;
 }
 
 .likeAndDelete {
@@ -29,19 +30,23 @@ margin-bottom: 20px;
     justify-content: start;
 }
 
-.likeAndDelete span{
+.likeAndDelete span {
     width: 100px;
     color: chartreuse;
 }
 
-.likeAndDelete button{
-    display: inline-block;
-    height: 30px;
-    width: 80px;
-    padding: 5px;
+.likeAndDelete button {
+    max-height: 28px;
+    background: transparent;
+    color: #aaaaaa;
+    border-radius: 7px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.likeAndDelete button:hover {
     color: #1a287e;
     background-color: tomato;
-    border-radius: 7px;
-    font-size: 14px;
-    font-weight: 700;
 }

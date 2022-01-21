@@ -5,16 +5,18 @@ import Post from './Post/Post';
 
 const MyPosts = (props) => {
     let posts = props.postsData.map(post => <Post message={post.message} likesCount={post.likesCount} id={post.id} key={post.id} deletePost={props.deletePost} />)
-    return (
+    return (<>
+        <hr />
         <div className={css.myPost}>
+            <h3> Мои посты.</h3>
             <InputPost
                 addPost={props.addPost}
             />
-            <h3> Мысли вслух</h3>
             {
                 posts
             }
         </div>
+    </>
     );
 }
 
