@@ -4,7 +4,7 @@ import css from './MyPosts.module.css'
 import Post from './Post/Post';
 
 const MyPosts = (props) => {
-    let posts = props.postsData.map(post => <Post message={post.message} likesCount={post.likesCount} id={post.id} key={post.id} deletePost={props.deletePost} />)
+    let posts = props.postsData.map(post => <Post ava={props.ava} message={post.message} likesCount={post.likesCount} id={post.id} key={post.id} deletePost={props.deletePost} />)
     return (<>
         <hr />
         <div className={css.myPost}>

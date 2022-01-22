@@ -17,6 +17,7 @@ const Profile = (props) => {
                 props.profilePage.userProfile && props.profilePage.userProfile.userId === props.currentUserId
                     ? <MyPosts
                         postsData={props.profilePage.postsData}
+                        ava={props.profilePage.userProfile.photos.small}
                         addPost={props.addPost}
                         deletePost={props.deletePost}
                     />

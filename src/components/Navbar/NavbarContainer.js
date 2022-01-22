@@ -4,7 +4,7 @@ import NavBar from './Navbar'
 let mapStateToProps = (state) => {
     return {
         navPage: state.navPage,
-        currentUser: state.auth.login,
+        currentUserId: state.auth.id,
     }
 }
 

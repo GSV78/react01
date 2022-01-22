@@ -2,33 +2,24 @@
     height: 100%;
     color: beige;
     background-color: #101010;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
 }
 
-.usersInner img{
-    width: 70px;
-    height: 70px;
-    border-radius: 15%;
+.usersInner img {
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
     border: 1px solid goldenrod;
 }
 
-.usersInner button{
-    width: 100px;
-    background-color: rgb(216, 186, 112);
-    border-radius: 15%;
-}
-
 .user {
-    display: inline-flex;
-    justify-content: space-between;
+    display: flex;
     align-items: center;
-    width: 550px;
-    margin: 10px;
+    width: 600px;
+    margin: 20px 15px;
     padding: 20px;
-    border: 1px solid bisque;
-    border-radius: 10px;
+    border: 2px solid #95fcdc;
+    border-radius: 15px;
+    background: transparent;
 }
 
 .avaAndButton {
@@ -37,30 +28,41 @@
 
 }
 
-.avaAndButton button{
+.avaAndButton button {
+    width: 100px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: transparent;
+    color: #aaaaaa;
+    transition: all 0.3s;
     cursor: pointer;
 }
 
-.main{
+.avaAndButton button:hover {
+    color: #ff1414;
+    background-color: #859398;
+}
+
+.main {
     justify-content: flex-start;
-    flex: 1;
     padding: 10px;
 }
 
 .main div {
-    color:rgb(243, 223, 120);
-    font-size: 24px;
+    color: rgb(243, 223, 120);
+    font-size: 30px;
     font-weight: 700;
     margin-bottom: 10px;
+    overflow-wrap: break-word;
 }
 
-.main p{
+.main p {
     font-style: italic;
     color: #DDE2FF;
     overflow-wrap: break-word;
 }
 
-.location{
+.location {
     color: rgb(152, 158, 243);
 }
 
@@ -74,8 +76,3 @@
     border: 1px solid bisque;
     border-radius: 10px;
 } */
-
-
-
-
-

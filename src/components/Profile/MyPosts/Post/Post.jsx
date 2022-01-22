@@ -1,5 +1,4 @@
 import css from './Post.module.css'
-import ava from './../../../../assets/images/avatar1.jpg'
 
 const Post = (props) => {
     let onDelete = () => {
@@ -8,7 +7,7 @@ const Post = (props) => {
     return (
         <div className={css.post}>
             <div className={css.postAvaAndText}>
-                <img alt='ava' src={ava} />
+                <img alt='ava' src={props.ava} />
                 <p> {props.message} </p>
             </div>
             <div className={css.likeAndDelete}>

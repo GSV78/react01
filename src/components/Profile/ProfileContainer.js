@@ -18,22 +18,23 @@ class ProfileAPIComponent extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.match !== prevProps.match) {
+        if (this.props.match && this.props.match.pathname !== prevProps.match.pathname) {
             this.refreshProfile()
         }
     }
 
     render() {
         return (
-            <Profile {...this.props} isOwner={!this.props.match} />
+            <Profile {...this.props} />
         )
     }
 }
 
 const ProfileMatch = (props) => {
+    const isOwner = (props.currentUserId === props.profilePage.userProfile.userId)
     let match = useMatch("/profile/:userId");
     return (
-        <ProfileAPIComponent {...props} match={match} />
+        <ProfileAPIComponent {...props} match={match} isOwner={isOwner} />
     )
 }
 

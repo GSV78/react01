@@ -6,7 +6,7 @@
     height: 40px;
     width: 40px;
     margin: 5px;
-    border-radius: 50%;
+    border-radius: 5px;
 }
 
 .postAvaAndText {
@@ -27,7 +27,7 @@
 
 .likeAndDelete {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
 }
 
 .likeAndDelete span {

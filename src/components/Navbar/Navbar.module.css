@@ -1,81 +1,82 @@
-.nav{
-    grid-area: n;
-    background-color: #101010	;
-    padding: 10px;
-    font-family: 'Mulish', sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 125%;
-    border-right: 1px solid beige;
-  }
-  
-  .item{
-    margin-bottom:5px;
-    padding: 5px;
-    display: flex;
-    justify-content: flex-start;
-  }
+.nav {
+  grid-area: n;
+  background-color: #101010;
+  padding: 10px;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 125%;
+  border-right: 1px solid beige;
+}
 
-  .item svg{
-    position: relative;
-    margin-right: 24px;
-    top: 5px;
-  }
+.item {
+  margin-bottom: 5px;
+  padding: 5px;
+  display: flex;
+  justify-content: flex-start;
+}
 
-  .item a{
-    cursor: pointer;
-    text-decoration: none;
-    max-width: 255px;
-    width: 100%;
-    padding: 18px;
-    transition: all .1s;
-  }
+.item svg {
+  position: relative;
+  margin-right: 24px;
+  top: 5px;
+}
 
-  .disactive {
-    color: #aaaaaa;
-  }
+.item a {
+  cursor: pointer;
+  text-decoration: none;
+  max-width: 255px;
+  width: 100%;
+  padding: 18px;
+}
 
-  .active {
-    position: relative;
-    color: #DDE2FF;
-    background-color: #9fa2b417;
-    border-left: 3px solid #DDE2FF;
-    left: -3px;
-  }
-  
-  .active > svg {
-    fill: #DDE2FF;
-  }
+.disactive {
+  color: #aaaaaa;
+}
 
-  hr{
-    color: beige;
-    height: 1px;
-    margin: 25px 0;
-  }
+.active {
+  position: relative;
+  color: #DDE2FF;
+  background-color: #9fa2b417;
+  background: linear-gradient(to right, #000, #444);
+  border-left: 3px solid #DDE2FF;
+  border-radius: 0 10px 10px 0;
+  left: -3px;
+}
 
-  .friends{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
+.active>svg {
+  fill: #DDE2FF;
+}
 
-  .nav h3{
-    color: yellowgreen;
-    padding: 10px;
-    margin-left: 20px;
-    margin-top: 70px;
-  }
+hr {
+  color: beige;
+  height: 1px;
+  margin: 25px 0;
+}
 
-  .title{
-    font-size: 24px;
-    color: beige;
-    padding: 10px;
-    margin-left: 20px;
-    margin-top: 10px;
-  }
-  
-  .numberOfFriends{
-    font-size: 16px;
-    color: beige;
-    margin-left: 30px;
-  }
+.friends {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.nav h3 {
+  color: yellowgreen;
+  padding: 10px;
+  margin-left: 20px;
+  margin-top: 70px;
+}
+
+.title {
+  font-size: 24px;
+  color: beige;
+  padding: 10px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.numberOfFriends {
+  font-size: 16px;
+  color: beige;
+  margin-left: 30px;
+}

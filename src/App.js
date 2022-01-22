@@ -7,13 +7,11 @@ import News from './components/News/News';
 import UsersContainer from './components/Users/UsersContainer';
 import Settings from './components/Settings/Settings';
 import Login from './components/Login/Login';
-import React, { Suspense } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { initializeApp } from './redux/app-reducer'
 import { withSuspense } from './hoc/withSuspense'
 import Preloader from './components/common/Preloader/Preloader';
-// import DialoguesContainer from './components/Dialogues/DialoguesContainer';
-// import ProfileContainer from './components/Profile/ProfileContainer'; 
 
 const DialoguesContainer = React.lazy(() => import('./components/Dialogues/DialoguesContainer'))
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'))

@@ -8,7 +8,15 @@ const SAVE_PHOTO_SUCCESS = 'samurai_network/profile/SAVE_PHOTO_SUCCESS';
 
 
 let initialState = {
-    userProfile: null,
+    userProfile: {
+        aboutMe: null,
+        contacts: {},
+        fullName: null,
+        lookingForAJob: null,
+        lookingForAJobDescription: null,
+        photos: {},
+        userId: null
+    },
     status: '',
     postsData: [
         { id: 2, message: 'Йоу-йоу!!! 42!', likesCount: 11 },
@@ -33,7 +41,7 @@ const profileReducer = (state = initialState, action) => {
         case (DELETE_POST): {
             return {
                 ...state,
-                postsData: state.postsData.filter(p => p.id != action.postId),
+                postsData: state.postsData.filter(p => p.id !== action.postId),
             }
         }
         case (SET_USER_PROFILE): {
@@ -70,8 +78,9 @@ const setUserProfile = (userProfile) => ({ type: SET_USER_PROFILE, userProfile }
 const setStatus = (status) => ({ type: SET_STATUS, status })
 
 export const getProfileThunkCreator = (id) => {
+
     return async (dispatch) => {
-        let data = await profileAPI.getProfile(id)
+        let data = await profileAPI.getProfileData(id)
         dispatch(setUserProfile(data))
     }
 }

@@ -1,5 +1,4 @@
 import * as axios from 'axios';
-import { Form } from 'redux-form';
 
 const instance = axios.create({
     withCredentials: true,
@@ -73,7 +72,7 @@ export const authAPI = {
 }
 
 export const profileAPI = {
-    getProfile(id) {
+    getProfileData: (id) => {
         return (
             instance
                 .get(`profile/${id}`)
@@ -82,7 +81,7 @@ export const profileAPI = {
                 })
         )
     },
-    getStatus(id) {
+    getStatus: (id) => {
         return (
             instance
                 .get(`profile/status/${id}`)
@@ -91,7 +90,7 @@ export const profileAPI = {
                 })
         )
     },
-    updateStatus(status) {
+    updateStatus: (status) => {
         return (
             instance
                 .put(`profile/status`, { status: status })
@@ -100,7 +99,7 @@ export const profileAPI = {
                 })
         )
     },
-    savePhoto(file) {
+    savePhoto: (file) => {
         const formData = new FormData()
         formData.append('image', file)
         return (
