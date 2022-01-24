@@ -1,5 +1,5 @@
 import React from 'react';
-import { addPost, deletePost, getProfileThunkCreator, getStatus, updateStatus, savePhoto } from './../../redux/profile-reducer'
+import { addPost, deletePost, getProfile, getStatus, updateStatus, savePhoto, saveProfile } from './../../redux/profile-reducer'
 import { connect } from 'react-redux';
 import { useMatch } from 'react-router-dom';
 import Profile from './Profile'
@@ -49,8 +49,8 @@ let mapStateToProps = (state) => {
 export default compose(
     connect(mapStateToProps, {
         addPost, deletePost,
-        getProfile: getProfileThunkCreator,
-        getStatus, updateStatus, savePhoto
+        getProfile,
+        getStatus, updateStatus, savePhoto, saveProfile
     }),
     withAuthRedirect,
 )(ProfileMatch)

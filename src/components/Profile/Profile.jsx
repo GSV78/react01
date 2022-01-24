@@ -12,6 +12,7 @@ const Profile = (props) => {
                 currentUserId={props.currentUserId}
                 isOwner={props.isOwner}
                 savePhoto={props.savePhoto}
+                saveProfile={props.saveProfile}
             />
             {
                 props.profilePage.userProfile && props.profilePage.userProfile.userId === props.currentUserId

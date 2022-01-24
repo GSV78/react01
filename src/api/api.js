@@ -113,5 +113,16 @@ export const profileAPI = {
                     return responce.data
                 })
         )
+    },
+    saveProfile: (profile) => {
+        // const formData = new FormData()
+        // formData.append('image', file)
+        return (
+            instance
+                .put(`profile`, profile)
+                .then(responce => {
+                    return responce.data
+                })
+        )
     }
 }

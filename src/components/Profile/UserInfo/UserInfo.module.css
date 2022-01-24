@@ -33,7 +33,8 @@
     margin-bottom: 10px;
   }
 
-  .aboutMe {
+  .aboutMe,
+  .fullName {
     padding: 0 10px;
     margin-left: 20px;
     margin-bottom: 10px;
@@ -71,7 +72,7 @@
     padding: 0 10px;
   }
 
-  .buttonSetProfileDetails button {
+  .buttonSetProfileEditMode button {
     margin-top: 10px;
     margin-left: 30px;
     padding: 5px;
@@ -87,4 +88,8 @@
   .buttonSetProfileEditMode button:hover {
     background-color: rgb(236, 197, 146);
     color: #000;
+  }
+
+  .formSummaryError {
+    color: red;
   }
