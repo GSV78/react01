@@ -97,9 +97,13 @@ export const getStatus = (id) => {
 
 export const updateStatus = (status) => {
     return async (dispatch) => {
-        let data = await profileAPI.updateStatus(status)
-        if (data.resultCode === 0) {
-            dispatch(setStatus(status))
+        try {
+            let data = await profileAPI.updateStatus(status)
+            if (data.resultCode === 0) {
+                dispatch(setStatus(status))
+            }
+        } catch (error) {
+            // alert(error), глобальный перехватчик уже не перехватывает эту ошибку
         }
     }
 }

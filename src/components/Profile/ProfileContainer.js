@@ -18,7 +18,7 @@ class ProfileAPIComponent extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.match && this.props.match.pathname !== prevProps.match.pathname) {
+        if (this.props.match && prevProps.match && this.props.match.pathname !== prevProps.match.pathname) {
             this.refreshProfile()
         }
     }

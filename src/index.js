@@ -1,20 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import AppContainer from './App';
 import store from './redux/redux-store'
 import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 
-// let currentUser = store.getState().profilePage.currentUser;
-
-
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Provider store={store}>
-                <App />
+                <AppContainer />
             </Provider>
         </BrowserRouter>
     </React.StrictMode>,

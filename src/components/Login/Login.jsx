@@ -14,7 +14,7 @@ const LoginForm = ({ handleSubmit, error, captchaUrl }) => {
             {createField(null, 'rememberMe', 'checkbox', Input, [], 'запомнить меня')}
             {captchaUrl
                 ? (<div>
-                    <img src={captchaUrl} />
+                    <img src={captchaUrl} alt='captcha' />
                     {createField('Cимволы с картинки', 'captcha', 'text', Input, [required])}
                 </div>)
                 : null}

@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap');
-*{
+
+* {
   box-sizing: border-box;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
 
 ul,
-li{
+li {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -20,23 +21,24 @@ h2,
 h3,
 h4,
 h5,
-h6{
+h6 {
   margin: 0;
   font-size: inherit;
 }
-p{
+
+p {
   margin: 0;
 }
 
 
-.app-wrapper{
+.app-wrapper {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 2fr 10fr;
   grid-template-rows: 50px 1fr;
-  grid-template-areas: 
-  "h h"
-  "n c";
+  grid-template-areas:
+    "h h"
+    "n c";
   width: 100%;
   min-height: 100vh;
   font-family: 'Mulish', sans-serif;
@@ -45,7 +47,7 @@ p{
 
 }
 
-.app-wrapper-content{
+.app-wrapper-content {
   grid-area: c;
   background-color: #101010;
   /* background-image: url('/src/assets/images/banner.jpg'); */
@@ -54,3 +56,7 @@ p{
   background-size: cover;
 }
 
+.app-wrapper-content h1 {
+  margin: 10px;
+  color: greenyellow;
+}

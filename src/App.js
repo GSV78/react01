@@ -17,10 +17,16 @@ const DialoguesContainer = React.lazy(() => import('./components/Dialogues/Dialo
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'))
 
 class App extends React.Component {
+  catchAllUnhandledErrors() {
+    console.log('Some error occured')
+  }
   componentDidMount() {
     this.props.initializeApp()
+    window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors)
   }
-
+  componentWillUnmount() {
+    window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors)
+  }
   render() {
     if (!this.props.initialized) {
       return <Preloader />
@@ -31,7 +37,8 @@ class App extends React.Component {
           <NavbarContainer />
           <div className='app-wrapper-content'>
             <Routes>
-              <Route path='/profile/*' element={withSuspense(ProfileContainer)} />
+              <Route path={'/*'} element={<h1>Добро пожаловать в СОЦИУМ!</h1>} />
+              <Route path={'/profile/*'} element={withSuspense(ProfileContainer)} />
               <Route path='/dialogues/*' element={withSuspense(DialoguesContainer)} />
               <Route path='/news/*' element={<News />} />
               <Route path='/music/*' element={<Music />} />
