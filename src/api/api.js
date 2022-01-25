@@ -41,6 +41,18 @@ export const userAPI = {
     },
 }
 
+export const securityAPI = {
+    getCaptcha: () => {
+        return (
+            instance
+                .get('security/get-captcha-url')
+                .then(responce => {
+                    return responce.data;
+                })
+        )
+    },
+}
+
 export const authAPI = {
     authMe: () => {
         return (
@@ -51,16 +63,16 @@ export const authAPI = {
                 })
         )
     },
-    authLogin: (email, password, rememberMe = false) => {
+    authLogin: (email, password, rememberMe = false, captcha = null) => {
         return (
             instance
-                .post(`auth/login`, { email, password, rememberMe })
+                .post(`auth/login`, { email, password, rememberMe, captcha })
                 .then(responce => {
                     return responce.data;
                 })
         )
     },
-    authLogout: (email, password, rememberMe = false) => {
+    authLogout: () => {
         return (
             instance
                 .delete(`auth/login`)
@@ -115,8 +127,6 @@ export const profileAPI = {
         )
     },
     saveProfile: (profile) => {
-        // const formData = new FormData()
-        // formData.append('image', file)
         return (
             instance
                 .put(`profile`, profile)
